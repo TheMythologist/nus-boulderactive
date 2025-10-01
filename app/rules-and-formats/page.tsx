@@ -213,9 +213,9 @@ export default function RulesAndFormatsPage() {
                       </tr>
                       <tr>
                         <td className="border border-border p-3 font-medium">Open</td>
+                        <td className="border border-border p-3">Session</td>
                         <td className="border border-border p-3">Rotation</td>
-                        <td className="border border-border p-3">Rotation</td>
-                        <td className="border border-border p-3">IFSC Finals (Concurrent)</td>
+                        <td className="border border-border p-3">IFSC Concurrent</td>
                       </tr>
                       <tr className="bg-muted/50">
                         <td className="border border-border p-3 font-medium">Team</td>
@@ -243,9 +243,9 @@ export default function RulesAndFormatsPage() {
                   />
                   <CompetitionCard
                     category="Open"
-                    qualifying="Rotation"
+                    qualifying="Session"
                     semiFinals="Rotation"
-                    finals="IFSC Finals (Concurrent)"
+                    finals="IFSC Concurrent"
                   />
                   <CompetitionCard
                     category="Team"
@@ -323,11 +323,11 @@ export default function RulesAndFormatsPage() {
                     list.
                   </li>
                   <li>
-                    Competitors shall be given <strong>3.5 minutes</strong> to attempt each route,
+                    Competitors shall be given <strong>4 minutes</strong> to attempt each route,
                     with no additional time to be given to complete climbing.
                   </li>
                   <li>
-                    Competitors shall be given a mandatory rest time of <strong>3.5 minutes</strong>{' '}
+                    Competitors shall be given a mandatory rest time of <strong>4 minutes</strong>{' '}
                     between routes, during which no observation of other routes shall be allowed.
                   </li>
                 </ul>
@@ -336,7 +336,7 @@ export default function RulesAndFormatsPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-foreground mb-6">
-                IFSC Finals (Concurrent) Format & Scoring
+                IFSC Concurrent Format & Scoring
               </h2>
 
               <div className="bg-card border border-border rounded-lg p-6">
@@ -348,7 +348,7 @@ export default function RulesAndFormatsPage() {
                     prohibited from using any recording equipment.
                   </li>
                   <li>
-                    Competitors shall attempt all 3 routes in the order set out in the official
+                    Competitors shall attempt all 4 routes in the order set out in the official
                     start list.
                   </li>
                   <li>
@@ -408,10 +408,11 @@ export default function RulesAndFormatsPage() {
                   <ul className="list-disc list-inside space-y-2 text-sm">
                     <li>
                       The <strong>24 highest-scoring competitors</strong> in their respective gender
-                      categories shall proceed to the semi-final rounds.
+                      categories of the Intermediate/Open category and the <strong> 20 highest-scoring
+                      competitors </strong> in each gender category of the Novice category shall proceed to the semi-final rounds.
                     </li>
                     <li>
-                      If there are more than 24 participants who are eligible to proceed to the
+                      If there are more than 24 participants (or 20 participants) who are eligible to proceed to the
                       semi-finals, e.g. there are 3 participants in 24th place with the same scores,
                       all will proceed to the semi-finals.
                     </li>

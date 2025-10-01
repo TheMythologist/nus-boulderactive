@@ -140,12 +140,12 @@ export function EventInfoSection() {
                     <span className="text-primary font-bold">09:00</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                    <span className="font-semibold text-sm">Inter Qualifiers</span>
+                    <span className="font-semibold text-sm">Inter Qualifiers/Novice Semifinals (Men)</span>
                     <span className="text-primary font-bold">15:40</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Novice Semifinals</span>
-                    <span className="text-accent font-bold">16:30</span>
+                    <span className="font-semibold text-sm">Novice/Inter Semifinals (Women)</span>
+                    <span className="text-accent font-bold">18:30</span>
                   </div>
                 </div>
               </CardContent>
@@ -165,11 +165,15 @@ export function EventInfoSection() {
                   </div>
                   <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
                     <span className="font-semibold text-sm">Inter Semifinals</span>
-                    <span className="text-accent font-bold">13:30</span>
+                    <span className="text-accent font-bold">14:30</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-secondary/10 rounded-lg border border-secondary/20">
                     <span className="font-semibold text-sm">Team Event</span>
-                    <span className="text-secondary font-bold">18:30</span>
+                    <span className="text-secondary font-bold">16:00</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
+                    <span className="font-semibold text-sm">Open Semifinals</span>
+                    <span className="text-accent font-bold">19:15</span>
                   </div>
                 </div>
               </CardContent>
@@ -183,21 +187,17 @@ export function EventInfoSection() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Open Semifinals</span>
-                    <span className="text-accent font-bold">11:00</span>
-                  </div>
                   <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
                     <span className="font-semibold text-sm">Novice Finals</span>
-                    <span className="text-secondary font-bold">14:00</span>
+                    <span className="text-secondary font-bold">10:00</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
                     <span className="font-semibold text-sm">Inter Finals</span>
-                    <span className="text-secondary font-bold">17:00</span>
+                    <span className="text-secondary font-bold">12:00</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
                     <span className="font-bold text-sm">Open Finals</span>
-                    <span className="text-secondary font-bold text-lg">19:00</span>
+                    <span className="text-secondary font-bold text-lg">14:00</span>
                   </div>
                 </div>
               </CardContent>
@@ -242,7 +242,6 @@ export function EventInfoSection() {
                     <li>No demo climb</li>
                     <li>5 problems per competitor</li>
                     <li>Same detail enters together</li>
-                    <li>Cannot view routes beforehand</li>
                     <li>30 min per detail</li>
                   </ul>
                 </CardContent>
@@ -257,11 +256,11 @@ export function EventInfoSection() {
                 <CardContent className="text-sm space-y-2">
                   <ul className="list-disc flex flex-col gap-1">
                     <li>No demo climb</li>
-                    <li>3 problems per competitor</li>
+                    <li>4 problems per competitor</li>
                     <li>Sent out in gendered pairs</li>
                     <li>To attempt routes in a set order</li>
                     <li>Cannot view routes beforehand</li>
-                    <li>3.5 min per route</li>
+                    <li>4 min per route</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -279,7 +278,7 @@ export function EventInfoSection() {
                     <li>Sent out in reverse order</li>
                     <li>To attempt routes in a set order</li>
                     <li>2-min observation period</li>
-                    <li>1 hour isolation + observation</li>
+                    <li>1 hour isolation</li>
                     <li>Return to isolation before competing and between each problem</li>
                   </ul>
                 </CardContent>
