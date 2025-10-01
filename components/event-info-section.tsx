@@ -124,7 +124,6 @@ export function EventInfoSection() {
             </p>
           </div>
 
-          {/* TODO: Split based on men vs. women */}
           {/* TODO: Need more details regarding registration time, detail time, etc. */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {/* Day 1 */}
@@ -136,43 +135,59 @@ export function EventInfoSection() {
               <CardContent className="space-y-4">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                    <span className="font-semibold text-sm">Novice Qualifiers</span>
+                    <span className="font-semibold text-sm">Novice Men Qualifiers</span>
                     <span className="text-primary font-bold">09:00</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                    <span className="font-semibold text-sm">Inter Qualifiers/Novice Semifinals (Men)</span>
+                    <span className="font-semibold text-sm">Novice Women Qualifiers</span>
+                    <span className="text-primary font-bold">13:20</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                    <span className="font-semibold text-sm">Inter Men Qualifiers</span>
                     <span className="text-primary font-bold">15:40</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Novice/Inter Semifinals (Women)</span>
+                    <span className="font-semibold text-sm">Novice Men Semifinals</span>
+                    <span className="text-primary font-bold">17:00</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
+                    <span className="font-semibold text-sm">Inter Women Semifinals</span>
                     <span className="text-accent font-bold">18:30</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
+                    <span className="font-semibold text-sm">Novice Women Semifinals</span>
+                    <span className="text-accent font-bold">20:00</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Day 2 */}
-            <Card className="p-6 border-l-4 border-l-accent">
+            <Card className="p-6 border-l-4 border-l-primary">
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-xl text-accent">DAY 2</CardTitle>
+                <CardTitle className="text-xl text-primary">DAY 2</CardTitle>
                 <p className="text-sm text-muted-foreground font-semibold">October 4, 2025</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                    <span className="font-semibold text-sm">Open Qualifiers</span>
+                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
+                    <span className="font-semibold text-sm">Open Women Semifinals</span>
                     <span className="text-primary font-bold">10:00</span>
                   </div>
+                  <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                    <span className="font-semibold text-sm">Open Men Qualifiers</span>
+                    <span className="text-primary font-bold">13:00</span>
+                  </div>
                   <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Inter Semifinals</span>
+                    <span className="font-semibold text-sm">Inter Men Semifinals</span>
                     <span className="text-accent font-bold">14:30</span>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-secondary/10 rounded-lg border border-secondary/20">
+                  <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
                     <span className="font-semibold text-sm">Team Event</span>
                     <span className="text-secondary font-bold">16:00</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Open Semifinals</span>
+                    <span className="font-semibold text-sm">Open Men Semifinals</span>
                     <span className="text-accent font-bold">19:15</span>
                   </div>
                 </div>
@@ -180,9 +195,9 @@ export function EventInfoSection() {
             </Card>
 
             {/* Day 3 */}
-            <Card className="p-6 border-l-4 border-l-secondary">
+            <Card className="p-6 border-l-4 border-l-primary">
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-xl text-secondary">DAY 3</CardTitle>
+                <CardTitle className="text-xl text-primary">DAY 3</CardTitle>
                 <p className="text-sm text-muted-foreground font-semibold">October 5, 2025</p>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -196,8 +211,12 @@ export function EventInfoSection() {
                     <span className="text-secondary font-bold">12:00</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
-                    <span className="font-bold text-sm">Open Finals</span>
+                    <span className="font-semibold text-sm">Open Women Finals</span>
                     <span className="text-secondary font-bold text-lg">14:00</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
+                    <span className="font-semibold text-sm">Open Men Finals</span>
+                    <span className="text-secondary font-bold text-lg">17:30</span>
                   </div>
                 </div>
               </CardContent>
