@@ -16,7 +16,7 @@ export function AboutSection() {
           <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-foreground">BEYOND LIMITS</h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg leading-relaxed mb-6">
-              Founded in 2019, NUS BoulderActive has emerged as Singapore&apos;s premier bouldering
+              Founded in 1997, NUS BoulderActive has emerged as Singapore&apos;s premier bouldering
               competition, bringing together climbers of all skill levels in the spirit of
               challenge, friendship, and personal growth. Our event celebrates the dynamic culture
               of bouldering while fostering an inclusive community passionate about sport climbing.
