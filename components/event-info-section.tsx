@@ -28,7 +28,7 @@ export function EventInfoSection() {
               </p>
               <Button asChild className="bg-primary hover:bg-primary/90">
                 <Link
-                  href="https://climbbuddy-5b7f6.web.app/"
+                  href="https://score.climbbuddy.io/#/leaderboard/Boulderactive%202025"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
