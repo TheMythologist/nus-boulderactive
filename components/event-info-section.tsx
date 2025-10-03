@@ -77,7 +77,7 @@ export function EventInfoSection() {
               >
                 <Link
                   target="_blank"
-                  href="https://docs.google.com/spreadsheets/d/1ISyPNq3u-ZbwfH5rZbVwW6YdRgm2bbDTl6tPAQ2Xjj8"
+                  href="https://docs.google.com/spreadsheets/d/1ISyPNq3u-ZbwfH5rZbVwW6YdRgm2bbDTl6tPAQ2Xjj8/view?gid=1564663232#gid=1564663232"
                   rel="noopener noreferrer"
                 >
                   SEE DETAILED SCHEDULE

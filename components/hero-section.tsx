@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin } from 'lucide-react';
-import { CountdownTimer } from './countdown-timer';
+import { Calendar, MapPin, TwitchIcon, YoutubeIcon } from 'lucide-react';
 import { HeroImageCarousel } from './hero-image-carousel';
+import Link from 'next/link';
 
 export function HeroSection() {
   return (
@@ -37,15 +37,60 @@ export function HeroSection() {
           competition.
         </p>
 
-        <CountdownTimer targetDate="2025-10-03T08:00:00+08:00" label="NUS BOULDERACTIVE STARTS" />
+        <div className="bg-primary/20 backdrop-blur-sm border border-accent/30 rounded-lg p-4 mb-6">
+          <p className="text-shadow-white font-semibold text-lg">NUS BoulderActive has started!</p>
+        </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
           <Button
             size="lg"
             variant="outline"
             className="border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-3 bg-transparent"
+            asChild
           >
-            VIEW SCHEDULE
+            <Link
+              href="https://docs.google.com/spreadsheets/d/1ISyPNq3u-ZbwfH5rZbVwW6YdRgm2bbDTl6tPAQ2Xjj8/view?gid=1564663232#gid=1564663232"
+              target="_blank"
+            >
+              VIEW SCHEDULE
+            </Link>
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-3 bg-red-500/80"
+            asChild
+          >
+            <Link href="https://www.youtube.com/@NUSClimbingClub" target="_blank">
+              <YoutubeIcon className="h-6 w-6" />
+              WATCH LIVE ON YOUTUBE
+            </Link>
+          </Button>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-3 bg-purple-400/60"
+            asChild
+          >
+            <Link href="https://www.twitch.tv/nusclimbingclub" target="_blank">
+              <TwitchIcon className="h-6 w-6" />
+              WATCH DAY 1 ON TWITCH
+            </Link>
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-3 bg-blue-400/60"
+            asChild
+          >
+            <Link
+              href="https://drive.google.com/drive/folders/1UEqwjHGd3yfPyM4ZD8YpJP86rocBAR0s?usp=sharing"
+              target="_blank"
+            >
+              DAY 1 PICS!
+            </Link>
           </Button>
         </div>
       </div>
