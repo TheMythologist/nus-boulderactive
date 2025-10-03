@@ -408,8 +408,8 @@ export default function RulesAndFormatsPage() {
                   <ul className="list-disc list-inside space-y-2 text-sm">
                     <li>
                       The <strong>24 highest-scoring competitors</strong> in their respective gender
-                      categories of the Intermediate/Open category and the <strong> 20 highest-scoring
-                      competitors </strong> in each gender category of the Novice category shall proceed to the semi-final rounds.
+                      categories of the Open category and the <strong> 20 highest-scoring
+                      competitors </strong> in each gender category of the Novice/Intermediate category shall proceed to the semi-final rounds.
                     </li>
                     <li>
                       If there are more than 24 participants (or 20 participants) who are eligible to proceed to the
