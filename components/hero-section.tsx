@@ -37,10 +37,6 @@ export function HeroSection() {
           competition.
         </p>
 
-        <div className="bg-primary/20 backdrop-blur-sm border border-accent/30 rounded-lg p-4 mb-6">
-          <p className="text-shadow-white font-semibold text-lg">NUS BoulderActive has started!</p>
-        </div>
-
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
           <Button
             size="lg"
@@ -58,7 +54,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-3 bg-red-500/80"
+            className="border-white text-white hover:bg-red-500/100 text-lg px-8 py-3 bg-red-500/60"
             asChild
           >
             <Link href="https://www.youtube.com/@NUSClimbingClub" target="_blank">
@@ -71,7 +67,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-3 bg-purple-400/60"
+            className="border-white text-white hover:bg-purple-400/100 text-lg px-8 py-3 bg-purple-400/60"
             asChild
           >
             <Link href="https://www.twitch.tv/nusclimbingclub" target="_blank">
@@ -82,7 +78,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-3 bg-blue-400/60"
+            className="border-white text-white hover:bg-blue-400/100 text-lg px-8 py-3 bg-blue-400/60"
             asChild
           >
             <Link
