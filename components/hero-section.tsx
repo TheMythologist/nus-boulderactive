@@ -57,24 +57,13 @@ export function HeroSection() {
             className="border-white text-white hover:bg-red-500/100 text-lg px-8 py-3 bg-red-500/60"
             asChild
           >
-            <Link href="https://youtube.com/live/BclZMrc0w-8" target="_blank">
+            <Link href="https://www.youtube.com/live/75q952QlJ8g?si=MKaw1vUHc66sj-Un" target="_blank">
               <YoutubeIcon className="h-6 w-6" />
               WATCH LIVE ON YOUTUBE
             </Link>
           </Button>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-white text-white hover:bg-purple-400/100 text-lg px-8 py-3 bg-purple-400/60"
-            asChild
-          >
-            <Link href="https://www.twitch.tv/nusclimbingclub" target="_blank">
-              <TwitchIcon className="h-6 w-6" />
-              WATCH DAY 1 ON TWITCH
-            </Link>
-          </Button>
           <Button
             size="lg"
             variant="outline"
