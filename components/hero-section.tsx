@@ -57,7 +57,7 @@ export function HeroSection() {
             className="border-white text-white hover:bg-red-500/100 text-lg px-8 py-3 bg-red-500/60"
             asChild
           >
-            <Link href="https://www.youtube.com/live/75q952QlJ8g?si=MKaw1vUHc66sj-Un" target="_blank">
+            <Link href="https://www.youtube.com/live/YQ8tww8K4Wc?si=uGNI1DZXlUJE6_U3" target="_blank">
               <YoutubeIcon className="h-6 w-6" />
               WATCH LIVE ON YOUTUBE
             </Link>
