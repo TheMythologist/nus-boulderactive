@@ -57,9 +57,12 @@ export function HeroSection() {
             className="border-white text-white hover:bg-red-500/100 text-lg px-8 py-3 bg-red-500/60"
             asChild
           >
-            <Link href="https://www.youtube.com/live/YQ8tww8K4Wc?si=uGNI1DZXlUJE6_U3" target="_blank">
+            <Link
+              href="https://www.youtube.com/@NUSClimbingClub"
+              target="_blank"
+            >
               <YoutubeIcon className="h-6 w-6" />
-              WATCH LIVE ON YOUTUBE
+              WATCH ON YOUTUBE
             </Link>
           </Button>
         </div>
@@ -67,14 +70,11 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="border-white text-white hover:bg-blue-400/100 text-lg px-8 py-3 bg-blue-400/60"
+            className="border-white text-white hover:bg-orange-400/100 text-lg px-8 py-3 bg-orange-400/60"
             asChild
           >
-            <Link
-              href="https://drive.google.com/drive/folders/1UEqwjHGd3yfPyM4ZD8YpJP86rocBAR0s?usp=sharing"
-              target="_blank"
-            >
-              DAY 1 PICS!
+            <Link href="https://linktr.ee/boulderactive2025" target="_blank">
+              PICTURES!
             </Link>
           </Button>
         </div>
