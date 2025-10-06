@@ -79,7 +79,7 @@ export function HeroSection() {
           >
             <Link href="https://linktr.ee/boulderactive2025" target="_blank">
               <WallpaperIcon className="w-6 h-6" />
-              PICTURES!
+              PICTURES
             </Link>
           </Button>
           <Button
@@ -93,7 +93,7 @@ export function HeroSection() {
               target="_blank"
             >
               <NotebookPenIcon className="w-6 h-6" />
-              FEEDBACK FORM!
+              FEEDBACK FORM
             </Link>
           </Button>
         </div>
