@@ -1,5 +1,12 @@
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, TwitchIcon, YoutubeIcon } from 'lucide-react';
+import {
+  Calendar,
+  MapPin,
+  NotebookPenIcon,
+  TwitchIcon,
+  WallpaperIcon,
+  YoutubeIcon,
+} from 'lucide-react';
 import { HeroImageCarousel } from './hero-image-carousel';
 import Link from 'next/link';
 
@@ -45,10 +52,10 @@ export function HeroSection() {
             asChild
           >
             <Link
-              href="https://docs.google.com/spreadsheets/d/1ISyPNq3u-ZbwfH5rZbVwW6YdRgm2bbDTl6tPAQ2Xjj8/view?gid=1564663232#gid=1564663232"
+              href="https://score.climbbuddy.io/#/leaderboard/Boulderactive%202025"
               target="_blank"
             >
-              VIEW SCHEDULE
+              VIEW RESULTS
             </Link>
           </Button>
           <Button
@@ -57,10 +64,7 @@ export function HeroSection() {
             className="border-white text-white hover:bg-red-500/100 text-lg px-8 py-3 bg-red-500/60"
             asChild
           >
-            <Link
-              href="https://www.youtube.com/@NUSClimbingClub"
-              target="_blank"
-            >
+            <Link href="https://www.youtube.com/@NUSClimbingClub" target="_blank">
               <YoutubeIcon className="h-6 w-6" />
               WATCH ON YOUTUBE
             </Link>
@@ -74,7 +78,22 @@ export function HeroSection() {
             asChild
           >
             <Link href="https://linktr.ee/boulderactive2025" target="_blank">
+              <WallpaperIcon className="w-6 h-6" />
               PICTURES!
+            </Link>
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-green-400/100 text-lg px-8 py-3 bg-green-400/60"
+            asChild
+          >
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLScojbtjpY9oSqFxhjet-wXRifw6xq1xqZ1PHswC4s9Q5G3MUQ/viewform"
+              target="_blank"
+            >
+              <NotebookPenIcon className="w-6 h-6" />
+              FEEDBACK FORM!
             </Link>
           </Button>
         </div>
