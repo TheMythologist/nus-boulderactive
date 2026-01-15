@@ -64,7 +64,7 @@ export function HeroSection() {
             className="border-white text-white hover:bg-red-500/100 text-lg px-8 py-3 bg-red-500/60"
             asChild
           >
-            <Link href="https://www.youtube.com/@NUSClimbingClub" target="_blank">
+            <Link href="https://www.youtube.com/playlist?list=PLwYq96iTjrtOetExD61Q-g-jN-YfQVU8A" target="_blank">
               <YoutubeIcon className="h-6 w-6" />
               WATCH ON YOUTUBE
             </Link>
