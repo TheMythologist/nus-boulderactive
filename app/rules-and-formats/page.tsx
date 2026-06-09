@@ -1,3 +1,11 @@
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { Sparkle } from '@/components/brand/sparkle';
+
+export const metadata = {
+  title: 'Rules & Formats · NUS BoulderActive 2026',
+};
+
 function CompetitionCard({
   category,
   qualifying,
@@ -43,35 +51,54 @@ function CompetitionCard({
 
 export default function RulesAndFormatsPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="pt-20 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Rules and Formats</h1>
-            <p className="text-lg text-muted-foreground">
-              NUS BoulderActive 2025 Competition Rules and Regulations
-            </p>
-            <p className="text-xs text-muted-foreground">Updated as of 27 September 2025</p>
+    <div className="min-h-screen bg-cream">
+      {/* Header band */}
+      <header className="border-b-2 border-ink bg-ink pt-24 pb-14 text-cream">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/"
+            className="mb-6 inline-flex items-center gap-2 font-display text-sm uppercase tracking-wide text-cream/70 transition-colors hover:text-lime"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to home
+          </Link>
+          <div className="mb-3 flex items-center gap-3">
+            <Sparkle className="h-4 w-4 text-lime" />
+            <span className="brand-index text-sm uppercase tracking-[0.18em] text-lime">
+              Rules &amp; Formats
+            </span>
           </div>
+          <h1 className="font-display text-[clamp(2.5rem,8vw,5rem)]">
+            Read The
+            <br />
+            Rules
+          </h1>
+          <p className="mt-4 text-cream/70">
+            NUS BoulderActive 2026 — Competition Rules &amp; Regulations
+          </p>
+        </div>
+      </header>
 
+      <div className="pb-20 pt-12">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
-            <div className="bg-card border border-border rounded-lg p-6 mb-8">
+            <div className="brand-card mb-8 p-6">
               <p className="text-sm text-muted-foreground">
                 The rules and regulations contained herein shall be known as the{' '}
-                <strong>BA25 Rules</strong> and shall be read in conjunction with the International
+                <strong>BA26 Rules</strong> and shall be read in conjunction with the International
                 Federation of Sport Climbing (IFSC) Rules and Regulations. In the event of conflicts
-                between the BA25 Rules and the IFSC Rules and Regulations, the BA25 Rules shall
+                between the BA26 Rules and the IFSC Rules and Regulations, the BA26 Rules shall
                 prevail.
               </p>
             </div>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">
                 Categories and Eligibility
               </h2>
 
               <p className="mb-6">
-                NUS BoulderActive 2025 will organise the following categories with the respective
+                NUS BoulderActive 2026 will organise the following categories with the respective
                 eligibility:
               </p>
 
@@ -159,8 +186,8 @@ export default function RulesAndFormatsPage() {
                 </table>
               </div>
 
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
-                <p className="text-sm font-medium text-yellow-800">
+              <div className="border-2 border-ink bg-lime rounded-sm p-5 mt-6">
+                <p className="text-sm font-medium text-ink">
                   <strong>Important:</strong> Any competitor found to have registered and competed
                   in any category he/she is ineligible for will immediately be disqualified and
                   moved to a higher category. International climbers may contact the Organisers for
@@ -170,7 +197,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">
                 Competition Format and Score
               </h2>
 
@@ -264,7 +291,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Flash Format & Scoring</h2>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">Flash Format & Scoring</h2>
 
               <div className="bg-card border border-border rounded-lg p-6">
                 <ul className="list-disc list-inside space-y-3">
@@ -291,7 +318,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Session Format & Scoring</h2>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">Session Format & Scoring</h2>
 
               <div className="bg-card border border-border rounded-lg p-6">
                 <ul className="list-disc list-inside space-y-3">
@@ -310,7 +337,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Rotation Format & Scoring</h2>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">Rotation Format & Scoring</h2>
 
               <div className="bg-card border border-border rounded-lg p-6">
                 <ul className="list-disc list-inside space-y-3">
@@ -335,7 +362,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">
                 IFSC Concurrent Format & Scoring
               </h2>
 
@@ -373,7 +400,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">
                 Team Rotation Format & Scoring
               </h2>
 
@@ -398,7 +425,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Qualification Rules</h2>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">Qualification Rules</h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-card border border-border rounded-lg p-6">
@@ -435,9 +462,9 @@ export default function RulesAndFormatsPage() {
                 </div>
               </div>
 
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
-                <h4 className="font-semibold text-yellow-800 mb-2">Tiebreaker Rules</h4>
-                <p className="text-sm text-yellow-700">
+              <div className="border-2 border-ink bg-lime rounded-sm p-5 mt-6">
+                <h4 className="font-semibold text-ink mb-2">Tiebreaker Rules</h4>
+                <p className="text-sm text-ink/80">
                   In the case of a tie where competitors have the same total qualifying score, a
                   tiebreaker will be applied by comparing the number of points allocated to each
                   competitor&apos;s highest scoring top. The tiebreaker operates in favour of the
@@ -451,7 +478,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Technical Climbing Rules</h2>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">Technical Climbing Rules</h2>
 
               <div className="text-sm text-muted-foreground mb-4">
                 <p>
@@ -562,7 +589,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Appeals Process</h2>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">Appeals Process</h2>
 
               <div className="bg-card border border-border rounded-lg p-6">
                 <div className="space-y-4">
@@ -608,7 +635,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">
                 Competitor Responsibilities
               </h2>
 
@@ -655,7 +682,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Isolation Zone Rules</h2>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">Isolation Zone Rules</h2>
 
               <div className="bg-card border border-border rounded-lg p-6">
                 <ul className="list-disc list-inside space-y-3">
@@ -688,7 +715,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Discipline and Conduct</h2>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">Discipline and Conduct</h2>
 
               <div className="space-y-6">
                 <div className="bg-card border border-border rounded-lg p-6">
@@ -710,14 +737,14 @@ export default function RulesAndFormatsPage() {
                   </ul>
                 </div>
 
-                <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-4 text-red-800">
+                <div className="border-2 border-destructive bg-destructive/10 rounded-sm p-6">
+                  <h3 className="text-lg font-semibold mb-4 text-destructive">
                     Immediate Disqualification
                   </h3>
-                  <p className="text-sm mb-3 text-red-700">
+                  <p className="text-sm mb-3 text-foreground/80">
                     The following infringements shall result in immediate disqualification:
                   </p>
-                  <ul className="list-disc list-inside space-y-1 text-sm text-red-700">
+                  <ul className="list-disc list-inside space-y-1 text-sm text-foreground/80">
                     <li>
                       Communication with any person outside the Competition Area during isolation
                       conditions
@@ -735,7 +762,7 @@ export default function RulesAndFormatsPage() {
                     <li>Usage of non-approved equipment</li>
                     <li>Breaking any Singapore laws</li>
                   </ul>
-                  <p className="text-sm mt-3 text-red-700 font-medium">
+                  <p className="text-sm mt-3 text-foreground/80 font-medium">
                     Note: The issuance of 2 official warnings to the same person in one competition
                     shall result in immediate disqualification.
                   </p>
@@ -744,7 +771,7 @@ export default function RulesAndFormatsPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Rights of the Organisers</h2>
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6 mt-2">Rights of the Organisers</h2>
 
               <div className="bg-card border border-border rounded-lg p-6">
                 <ul className="list-disc list-inside space-y-3">

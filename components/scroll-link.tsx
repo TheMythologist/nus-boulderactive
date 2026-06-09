@@ -11,18 +11,27 @@ const scrollToSection = (id: string) => {
 export default function ScrollButton({
   scrollToId,
   className,
+  onClick,
   ...props
-}: Omit<React.ComponentProps<'a'>, 'onClick'> & {
+}: React.ComponentProps<'a'> & {
   scrollToId: string;
 }) {
   const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isHome) {
+      scrollToSection(scrollToId);
+    }
+    onClick?.(event);
+  };
 
   return (
     <a
       {...props}
       className={cn('cursor-pointer', className)}
-      onClick={pathname === '/' ? () => scrollToSection(scrollToId) : undefined}
-      href={pathname === '/' ? undefined : `/#${scrollToId}`}
+      onClick={handleClick}
+      href={isHome ? undefined : `/#${scrollToId}`}
     />
   );
 }

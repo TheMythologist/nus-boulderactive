@@ -1,53 +1,51 @@
-# NUS BoulderActive - Climbing Competition Website
+# NUS BoulderActive 2026 — Competition Website
 
-_Automatically synced with your [v0.app](https://v0.app) deployments_
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://nus-boulderactive.vercel.app)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/ugdAeVrnkFR)
+Official website for **NUS BoulderActive**, Singapore's premier bouldering competition,
+presented by the NUS Climbing Club.
 
 ## Overview
 
-Official website for the NUS BoulderActive climbing competition happening October 3-5, 2024. This repository stays in sync with your deployed chats on [v0.app](https://v0.app). Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+The 2026 edition is presented in a fresh visual identity derived from the NUS Climbing Club
+brand book. The site teases the upcoming competition (dates & venue to be announced) while
+keeping the evergreen rules, formats and contact information available year-round.
 
-## Competition Details
+## Brand & design system
 
-- **Event**: NUS BoulderActive Climbing Competition
-- **Dates**: October 3-5, 2024
-- **Location**: National University of Singapore
-- **Type**: Bouldering Competition
+The look is built directly from the brand book:
 
-## Deployment
+- **Palette** — Electric Blue `#012BFC`, Lime `#D0F537`, Off-white `#FEFFF2`, Ink `#0B0B0C`.
+  Sections are colour-blocked (cream → blue → cream → ink) for a high-contrast, sporty rhythm.
+- **Typography** — a single heavy grotesque, [Archivo](https://fonts.google.com/specimen/Archivo),
+  weight-contrasted between oversized uppercase display headings and clean body copy.
+- **Motifs** — the four-point **sparkle** graphic, numbered `(00X)` section indices, scrolling
+  marquee tickers, brutalist hard-bordered cards, and duotone (grayscale + blue cast) photography.
 
-Your project is live at:
+Shared brand primitives live in `components/brand/` (`Sparkle`, `Marquee`, `SectionHeading`).
+Design tokens and utilities are defined in `app/globals.css`.
 
-**[https://nus-boulderactive.vercel.app](https://nus-boulderactive.vercel.app)**
+## Tech stack
 
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/projects/ugdAeVrnkFR](https://v0.app/chat/projects/ugdAeVrnkFR)**
-
-## Features
-
-- Responsive design optimized for mobile and desktop
-- Hero image carousel with smooth transitions
-- Competition information and rules
-- Event schedule and location details
-- Registration system
-- Countdown timer to competition start
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
-
-## Tech Stack
-
-- **Framework**: Next.js 14 with App Router
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS v4
+- **UI primitives**: shadcn/ui
+- **Fonts**: `next/font` (Archivo)
 - **Deployment**: Vercel
-- **Development**: v0.app
+
+## Local development
+
+```bash
+pnpm install
+pnpm dev      # http://localhost:3000
+pnpm build    # production build
+pnpm lint
+```
+
+## Updating for the live event
+
+When 2026 details are confirmed, update:
+
+- `components/hero-section.tsx` — date / venue status line and CTAs.
+- `components/event-info-section.tsx` — the "Dropping Soon" schedule teaser → full day-by-day schedule.
+- `components/location-section.tsx` — replace the "Venue To Be Announced" panel with the confirmed venue (and map).
+- `components/notification-manager.tsx` — registration reminders and their display window.
+- `app/rules-and-formats/page.tsx` — confirm rule details for the edition.

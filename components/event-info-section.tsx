@@ -1,311 +1,207 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar, Camera, Info, ExternalLink } from 'lucide-react';
+import {
+  BarChart3,
+  BookOpenText,
+  CalendarClock,
+  Images,
+  ArrowUpRight,
+  Instagram,
+} from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { SectionHeading } from '@/components/brand/section-heading';
+import { Sparkle } from '@/components/brand/sparkle';
+
+const FORMATS = [
+  {
+    name: 'Flash',
+    points: ['Demo climb available', '6 problems per competitor', 'View routes beforehand', '19 min per detail'],
+  },
+  {
+    name: 'Session',
+    points: ['No demo climb', '5 problems per competitor', 'Detail enters together', '30 min per detail'],
+  },
+  {
+    name: 'Rotation',
+    points: ['No demo climb', '4 problems per competitor', 'Gendered pairs, set order', '4 min per route'],
+  },
+  {
+    name: 'IFSC Concurrent',
+    points: ['2-min observation period', '4 problems, set order', '1 hour isolation', 'Tops · zones · attempts'],
+  },
+];
 
 export function EventInfoSection() {
   return (
-    <section className="py-20" id="information">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">EVENT INFORMATION</h2>
-        </div>
+    <>
+      {/* Information cards */}
+      <section id="information" className="bg-cream">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <SectionHeading index="002" label="Event Information" title="The Lowdown" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <Card className="p-6 border-2 border-primary bg-primary/5">
-            <CardContent className="text-center pt-6">
-              <Image
-                src="/climbbuddy.png"
-                alt="ClimbBuddy Logo"
-                height={40}
-                width={40}
-                className="h-8 w-8 text-primary mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-4 text-primary">ClimbBuddy Live Scores</h3>
-              <p className="text-muted-foreground mb-6">
-                View live scores and rankings during the competition
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {/* When & Where */}
+            <div className="brand-card brand-card-interactive flex flex-col bg-ink p-7 text-cream">
+              <div className="mb-5 flex items-start justify-between">
+                <CalendarClock className="h-9 w-9 text-lime" />
+                <Sparkle className="h-5 w-5 text-lime" />
+              </div>
+              <h3 className="font-display text-2xl">When &amp; Where</h3>
+              <p className="mt-2 flex-1 text-cream/75">
+                Mark your calendar for <span className="text-lime">October 2026</span>. The
+                full date and venue will be announced soon — follow along so you don&apos;t
+                miss the drop.
               </p>
-              <Button asChild className="bg-primary hover:bg-primary/90">
+              <Button variant="lime" className="mt-6 w-fit font-display uppercase" asChild>
+                <Link
+                  href="https://www.instagram.com/nusboulderactive/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="h-4 w-4" />
+                  Get Updates
+                </Link>
+              </Button>
+            </div>
+
+            {/* Rules & Formats */}
+            <div className="brand-card brand-card-interactive flex flex-col bg-blue p-7 text-cream">
+              <div className="mb-5 flex items-start justify-between">
+                <BookOpenText className="h-9 w-9 text-lime" />
+                <Sparkle className="h-5 w-5 text-lime" />
+              </div>
+              <h3 className="font-display text-2xl">Rules &amp; Formats</h3>
+              <p className="mt-2 flex-1 text-cream/80">
+                Categories, eligibility, scoring and the full technical climbing rules —
+                everything you need before you compete.
+              </p>
+              <Button variant="lime" className="mt-6 w-fit font-display uppercase" asChild>
+                <Link href="/rules-and-formats">
+                  Read The Rules
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Past Results */}
+            <div className="brand-card brand-card-interactive flex flex-col bg-lime p-7 text-ink">
+              <div className="mb-5 flex items-start justify-between">
+                <BarChart3 className="h-9 w-9" />
+                <Sparkle className="h-5 w-5" />
+              </div>
+              <h3 className="font-display text-2xl">Past Results</h3>
+              <p className="mt-2 flex-1 text-ink/75">
+                Relive the 2025 edition — full live scores, rankings and finals results on
+                ClimbBuddy.
+              </p>
+              <Button variant="ink" className="mt-6 w-fit font-display uppercase" asChild>
                 <Link
                   href="https://score.climbbuddy.io/#/leaderboard/Boulderactive%202025"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Live Scores
-                  <ExternalLink className="h-4 w-4 ml-2" />
+                  View Results
+                  <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </Button>
-            </CardContent>
-          </Card>
+            </div>
 
-          <Card className="p-6 border-2 border-secondary bg-secondary/5">
-            <CardContent className="text-center pt-6">
-              <Info className="h-8 w-8 text-secondary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-4 text-secondary">Competition Rules</h3>
-              <p className="text-muted-foreground mb-6">
-                View detailed rules, categories, and format information
+            {/* Gallery */}
+            <div className="brand-card brand-card-interactive flex flex-col p-7 text-ink">
+              <div className="mb-5 flex items-start justify-between">
+                <Images className="h-9 w-9 text-blue" />
+                <Sparkle className="h-5 w-5 text-blue" />
+              </div>
+              <h3 className="font-display text-2xl">Gallery</h3>
+              <p className="mt-2 flex-1 text-muted-foreground">
+                Photos and recap reels from previous editions — see the energy on the wall
+                for yourself.
               </p>
-              <Button
-                asChild
-                variant="outline"
-                className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent"
-              >
-                <Link href="/rules-and-formats" rel="noopener noreferrer">
-                  View Rules
-                  <ExternalLink className="h-4 w-4 ml-2" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Date & Venue */}
-          <Card className="pt-6">
-            <CardHeader className="text-center pb-2">
-              <Calendar className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle className="text-2xl">Date & Venue</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-center">
-              <p className="text-lg font-semibold mb-2">October 3-5, 2025</p>
-              <p className="text-muted-foreground mb-4">City Square Mall</p>
-              <Button
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                asChild
-              >
+              <Button variant="ink" className="mt-6 w-fit font-display uppercase" asChild>
                 <Link
+                  href="https://linktr.ee/boulderactive2025"
                   target="_blank"
-                  href="https://docs.google.com/spreadsheets/d/1ISyPNq3u-ZbwfH5rZbVwW6YdRgm2bbDTl6tPAQ2Xjj8/view?gid=1564663232#gid=1564663232"
                   rel="noopener noreferrer"
                 >
-                  SEE DETAILED SCHEDULE
-                  <ExternalLink className="h-4 w-4 ml-2" />
+                  View Photos
+                  <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </Button>
-            </CardContent>
-          </Card>
-
-          {/* Event Photos */}
-          <Card className="p-6">
-            <CardHeader className="text-center pb-2">
-              <Camera className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle className="text-2xl">Event Photos</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-muted-foreground mb-6">
-                Experience the excitement of competitive bouldering with climbers from across
-                Singapore&apos;s universities and climbing community.
-              </p>
-              <Button
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                asChild
-              >
-                <Link
-                  target="_blank"
-                  href="https://linktr.ee/boulderactive2022"
-                  rel="noopener noreferrer"
-                >
-                  PREVIOUS BA PHOTOS
-                  <ExternalLink className="h-4 w-4 ml-2" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="mt-20" id="schedule">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4 text-primary">DETAILED SCHEDULE</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Three days of intense competition across multiple categories and formats
+      {/* Schedule teaser + formats — ink colour block */}
+      <section id="schedule" className="relative overflow-hidden bg-ink text-cream">
+        <Sparkle className="absolute -left-12 bottom-10 h-44 w-44 text-cream/5" />
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <SectionHeading
+            index="003"
+            label="Schedule"
+            title={
+              <>
+                Dropping
+                <br />
+                Soon<span className="text-lime">.</span>
+              </>
+            }
+          />
+          <p className="mt-6 max-w-2xl text-lg text-cream/75">
+            Three days of head-to-head bouldering across Novice, Intermediate, Open and Team
+            categories. The full day-by-day schedule will be released closer to the date.
+          </p>
+
+          {/* Day placeholders */}
+          <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {['Day 01', 'Day 02', 'Day 03'].map(day => (
+              <div
+                key={day}
+                className="flex items-center justify-between border-2 border-cream/25 p-6"
+              >
+                <span className="font-display text-2xl text-cream">{day}</span>
+                <span className="brand-chip border-lime text-lime">TBA</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Competition formats (evergreen) */}
+          <div className="mt-20">
+            <div className="mb-8 flex items-center gap-3">
+              <Sparkle className="h-4 w-4 text-lime" />
+              <h3 className="font-display text-2xl uppercase tracking-wide sm:text-3xl">
+                Competition Formats
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {FORMATS.map((format, i) => (
+                <div key={format.name} className="brand-card flex flex-col p-6 text-ink">
+                  <div className="mb-4 flex items-baseline justify-between">
+                    <h4 className="font-display text-lg">{format.name}</h4>
+                    <span className="brand-index text-xl text-ink/25">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {format.points.map(point => (
+                      <li key={point} className="flex gap-2">
+                        <Sparkle className="mt-1 h-2.5 w-2.5 shrink-0 text-blue" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-cream/60">
+              Full format details and scoring are in the{' '}
+              <Link href="/rules-and-formats" className="text-lime underline-offset-4 hover:underline">
+                rules &amp; formats
+              </Link>
+              .
             </p>
           </div>
-
-          {/* TODO: Need more details regarding registration time, detail time, etc. */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {/* Day 1 */}
-            <Card className="p-6 border-l-4 border-l-primary">
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-xl text-primary">DAY 1</CardTitle>
-                <p className="text-sm text-muted-foreground font-semibold">October 3, 2025</p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                    <span className="font-semibold text-sm">Novice Men Qualifiers</span>
-                    <span className="text-primary font-bold">09:00</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                    <span className="font-semibold text-sm">Novice Women Qualifiers</span>
-                    <span className="text-primary font-bold">13:20</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                    <span className="font-semibold text-sm">Inter Men Qualifiers</span>
-                    <span className="text-primary font-bold">15:40</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Novice Men Semifinals</span>
-                    <span className="text-primary font-bold">17:00</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Inter Women Semifinals</span>
-                    <span className="text-accent font-bold">18:30</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Novice Women Semifinals</span>
-                    <span className="text-accent font-bold">20:00</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Day 2 */}
-            <Card className="p-6 border-l-4 border-l-primary">
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-xl text-primary">DAY 2</CardTitle>
-                <p className="text-sm text-muted-foreground font-semibold">October 4, 2025</p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Open Women Semifinals</span>
-                    <span className="text-primary font-bold">10:00</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                    <span className="font-semibold text-sm">Open Men Qualifiers</span>
-                    <span className="text-primary font-bold">13:00</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Inter Men Semifinals</span>
-                    <span className="text-accent font-bold">14:30</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
-                    <span className="font-semibold text-sm">Team Event</span>
-                    <span className="text-secondary font-bold">16:00</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
-                    <span className="font-semibold text-sm">Open Men Semifinals</span>
-                    <span className="text-accent font-bold">19:15</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Day 3 */}
-            <Card className="p-6 border-l-4 border-l-primary">
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-xl text-primary">DAY 3</CardTitle>
-                <p className="text-sm text-muted-foreground font-semibold">October 5, 2025</p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
-                    <span className="font-semibold text-sm">Novice Finals</span>
-                    <span className="text-secondary font-bold">10:00</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
-                    <span className="font-semibold text-sm">Inter Finals</span>
-                    <span className="text-secondary font-bold">12:00</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
-                    <span className="font-semibold text-sm">Open Women Finals</span>
-                    <span className="text-secondary font-bold text-lg">14:00</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-secondary/20 rounded-lg border-2 border-secondary">
-                    <span className="font-semibold text-sm">Open Men Finals</span>
-                    <span className="text-secondary font-bold text-lg">17:30</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Competition Formats */}
-          <div className="mt-16">
-            <div className="text-center mb-8">
-              <h4 className="text-2xl font-bold mb-4 text-primary">COMPETITION FORMATS</h4>
-              <p className="text-muted-foreground">
-                Understanding the different competition formats
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Flash Format */}
-              <Card className="p-6">
-                <CardHeader className="text-center pb-4">
-                  <Info className="h-8 w-8 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-lg">FLASH</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm space-y-2">
-                  <ul className="list-disc flex flex-col gap-1">
-                    <li>Demo climb available</li>
-                    <li>6 problems per competitor</li>
-                    <li>Same detail enters together</li>
-                    <li>Can view routes beforehand</li>
-                    <li>19 min per detail</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Session Format */}
-              <Card className="p-6">
-                <CardHeader className="text-center pb-4">
-                  <Info className="h-8 w-8 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-lg">SESSION</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm space-y-2">
-                  <ul className="list-disc flex flex-col gap-1">
-                    <li>No demo climb</li>
-                    <li>5 problems per competitor</li>
-                    <li>Same detail enters together</li>
-                    <li>30 min per detail</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Rotation Format */}
-              <Card className="p-6">
-                <CardHeader className="text-center pb-4">
-                  <Info className="h-8 w-8 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-lg">ROTATION</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm space-y-2">
-                  <ul className="list-disc flex flex-col gap-1">
-                    <li>No demo climb</li>
-                    <li>4 problems per competitor</li>
-                    <li>Sent out in gendered pairs</li>
-                    <li>To attempt routes in a set order</li>
-                    <li>Cannot view routes beforehand</li>
-                    <li>4 min per route</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* IFSC Concurrent */}
-              <Card className="p-6">
-                <CardHeader className="text-center pb-4">
-                  <Info className="h-8 w-8 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-lg">IFSC CONCURRENT</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm space-y-2">
-                  <ul className="list-disc flex flex-col gap-1">
-                    <li>No demo climb</li>
-                    <li>4 problems per competitor</li>
-                    <li>Sent out in reverse order</li>
-                    <li>To attempt routes in a set order</li>
-                    <li>2-min observation period</li>
-                    <li>1 hour isolation</li>
-                    <li>Return to isolation before competing and between each problem</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

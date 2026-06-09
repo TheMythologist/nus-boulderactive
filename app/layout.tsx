@@ -1,40 +1,38 @@
 import type React from 'react';
 import type { Metadata } from 'next';
-import { Inter, Orbitron, Montserrat } from 'next/font/google';
+import { Archivo } from 'next/font/google';
 import { Footer } from '@/components/footer';
 import { Navigation } from '@/components/navigation';
 import { Toaster } from '@/components/ui/sonner';
 import './globals.css';
 
-const inter = Inter({
+// A single heavy grotesque, weight-contrasted — matches the brand book's
+// "primary typeface" voice across display and body.
+const archivo = Archivo({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
-  weight: ['400', '500', '600', '700'],
-});
-
-const orbitron = Orbitron({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-orbitron',
-  weight: ['400', '700', '900'],
-});
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-montserrat',
-  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-archivo',
+  weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
-  title: 'NUS BoulderActive 2025',
+  title: 'NUS BoulderActive 2026',
   description:
-    'Join the ultimate bouldering competition at NUS Singapore. Test your limits, conquer new heights, and be part of the climbing community.',
+    "Singapore's premier bouldering competition returns in 2026. Push your limits, conquer new heights, and join the climbing community. Presented by NUS Climbing Club.",
+  metadataBase: new URL('https://boulderactive.io'),
+  openGraph: {
+    title: 'NUS BoulderActive 2026',
+    description:
+      "Singapore's premier bouldering competition returns in 2026. Presented by NUS Climbing Club.",
+    type: 'website',
+  },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/logo.png',
+    apple: '/icon.svg',
   },
 };
 
@@ -44,10 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${orbitron.variable} ${montserrat.variable} antialiased`}
-    >
+    <html lang="en" className={`${archivo.variable} antialiased`}>
       <body className="font-sans" suppressHydrationWarning>
         <Navigation />
         <main>{children}</main>

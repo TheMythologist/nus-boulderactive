@@ -10,7 +10,7 @@ export function HeroImageCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex(prevIndex => (prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1));
-    }, 5000); // Change image every 5 seconds
+    }, 5500);
 
     return () => clearInterval(interval);
   }, []);
@@ -20,20 +20,21 @@ export function HeroImageCarousel() {
       {heroImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
+          className={`img-duotone absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
             index === currentImageIndex ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
             backgroundImage: `url('${image}')`,
-            animation:
-              index === currentImageIndex
-                ? 'heroFloat 8s ease-in-out infinite, heroZoom 12s ease-in-out infinite'
-                : 'none',
-            transform: 'scale(1.05)',
+            animation: index === currentImageIndex ? 'heroZoom 16s ease-in-out infinite' : 'none',
+            transform: 'scale(1.06)',
           }}
         />
       ))}
-      <div className="absolute inset-0 bg-black/40"/>
+      {/* Electric-blue duotone cast */}
+      <div className="absolute inset-0 bg-blue/35 mix-blend-color" />
+      {/* Legibility: darken + bottom-weighted gradient toward the ink base */}
+      <div className="absolute inset-0 bg-ink/55" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/60" />
     </div>
   );
 }

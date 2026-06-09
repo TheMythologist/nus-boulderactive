@@ -17,11 +17,18 @@ const buttonVariants = cva(
         secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
+        // Brand variants — chunky, bordered, high-contrast (brand-book voice)
+        blue: 'border-2 border-ink bg-blue text-cream hover:bg-ink hover:text-lime',
+        lime: 'border-2 border-ink bg-lime text-ink hover:bg-ink hover:text-lime',
+        ink: 'border-2 border-ink bg-ink text-cream hover:bg-lime hover:text-ink',
+        brandOutline:
+          'border-2 border-current bg-transparent hover:bg-current [&:hover>*]:text-[var(--background)]',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
         sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
         lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
+        xl: 'h-14 rounded-md px-8 text-base font-display uppercase tracking-wide has-[>svg]:px-6',
         icon: 'size-9',
       },
     },

@@ -2,30 +2,31 @@
 
 import React, { useEffect, useRef } from 'react';
 import { toast } from 'sonner';
-import { Shirt, CreditCard } from 'lucide-react';
+import { Sparkles, Instagram } from 'lucide-react';
 import usePersistedState from '@/hooks/use-persisted-state';
 
-// TODO: Update notifications with reminder per category
+// Example notification — dormant until the 2026 announcement window opens.
 const NOTIFICATIONS = [
   {
-    id: 'shirt-payment-reminder',
-    title: 'Payment Reminder',
-    message: "Don't forget to pay for your BA-exclusive shirts if you ordered!",
-    type: 'warning',
-    icon: Shirt,
+    id: 'ba26-stay-tuned',
+    title: 'BoulderActive 2026 is coming',
+    message:
+      "Registration and event details drop soon — follow @nusboulderactive so you don't miss it.",
+    type: 'info',
+    icon: Sparkles,
     action: {
-      label: 'Pay Now',
-      icon: CreditCard,
+      label: 'Follow',
+      icon: Instagram,
       onClick: () => {
-        toast.success('Redirecting to payment portal...');
-        setTimeout(
-          () => window.location.assign('https://betaspray.cococart.co/#cartPreview'),
-          2000,
+        window.open(
+          'https://www.instagram.com/nusboulderactive/',
+          '_blank',
+          'noopener,noreferrer',
         );
       },
     },
-    showFrom: new Date('2025-09-01'),
-    showUntil: new Date('2025-10-02'),
+    showFrom: new Date('2026-07-01'),
+    showUntil: new Date('2026-10-31'),
   },
 ];
 

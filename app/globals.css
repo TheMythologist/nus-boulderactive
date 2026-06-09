@@ -3,87 +3,80 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  NUS BoulderActive 2026 — brand system
+  Derived from the NUS Climbing Club brand book.
+  Core palette: Lime #D0F537 · Off-white #FEFFF2 · Electric Blue #012BFC · Ink #0B0B0C
+*/
 :root {
-  --background: oklch(1 0 0); /* #ffffff - Clean white background */
-  --foreground: oklch(0.25 0.02 258); /* #1f2937 - Dark charcoal for text */
-  --card: oklch(0.97 0.01 258); /* #f8fafc - Light slate for cards */
-  --card-foreground: oklch(0.25 0.02 258); /* #1f2937 - Dark charcoal text on cards */
-  --popover: oklch(1 0 0); /* #ffffff - White popover background */
-  --popover-foreground: oklch(0.25 0.02 258); /* #1f2937 - Dark charcoal popover text */
-  /* Updated primary color to golden yellow from logo */
-  --primary: oklch(0.65 0.15 85); /* #d4af37 - Golden yellow primary color */
-  --primary-foreground: oklch(0.25 0.02 258); /* #1f2937 - Dark text on primary */
-  /* Updated secondary to red/coral from logo gradient */
-  --secondary: oklch(0.55 0.22 25); /* #dc2626 - Red/coral secondary */
-  --secondary-foreground: oklch(1 0 0); /* #ffffff - White text on secondary */
-  --muted: oklch(0.97 0.01 258); /* #f8fafc - Light slate muted */
-  --muted-foreground: oklch(0.45 0.02 258); /* #6b7280 - Medium gray muted text */
-  /* Updated accent to match secondary red */
-  --accent: oklch(0.55 0.22 25); /* #dc2626 - Red accent */
-  --accent-foreground: oklch(1 0 0); /* #ffffff - White text on accent */
-  --destructive: oklch(0.55 0.22 25); /* #dc2626 - Red destructive */
-  --destructive-foreground: oklch(1 0 0); /* #ffffff - White text on destructive */
-  --border: oklch(0.92 0.01 258); /* #e5e7eb - Light gray borders */
-  --input: oklch(0.97 0.01 258); /* #f8fafc - Light slate input background */
-  --ring: oklch(0.65 0.15 85 / 0.5); /* Golden focus ring with opacity */
-  /* Updated chart colors to match brand palette */
-  --chart-1: oklch(0.65 0.15 85); /* #d4af37 - Primary golden */
-  --chart-2: oklch(0.55 0.22 25); /* #dc2626 - Secondary red */
-  --chart-3: oklch(0.25 0.02 258); /* #1f2937 - Dark charcoal */
-  --chart-4: oklch(0.45 0.02 258); /* #6b7280 - Medium gray */
-  --chart-5: oklch(0.92 0.01 258); /* #e5e7eb - Light gray */
-  --radius: 0.5rem;
-  --sidebar: oklch(1 0 0); /* #ffffff - White sidebar */
-  --sidebar-foreground: oklch(0.25 0.02 258); /* #1f2937 - Dark charcoal sidebar text */
-  --sidebar-primary: oklch(0.65 0.15 85); /* #d4af37 - Golden sidebar primary */
-  --sidebar-primary-foreground: oklch(0.25 0.02 258); /* #1f2937 - Dark text on sidebar primary */
-  --sidebar-accent: oklch(0.55 0.22 25); /* #dc2626 - Red sidebar accent */
-  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff - White text on sidebar accent */
-  --sidebar-border: oklch(0.92 0.01 258); /* #e5e7eb - Light gray sidebar borders */
-  --sidebar-ring: oklch(0.65 0.15 85 / 0.5); /* Golden sidebar focus ring */
-  --font-open-sans: 'Open Sans', sans-serif;
-  --font-work-sans: 'Work Sans', sans-serif;
-  --font-inter: 'Inter', sans-serif;
-  --font-orbitron: 'Orbitron', sans-serif;
-  --font-montserrat: 'Montserrat', sans-serif;
+  /* Raw brand colours */
+  --cream: #fefff2; /* Off-white  (RGB 254,255,242) */
+  --ink: #0b0b0c; /* Near-black */
+  --lime: #d0f537; /* Lime green (RGB 208,245,55) */
+  --blue: #012bfc; /* Primary blue (RGB 1,43,252) */
+
+  /* Semantic tokens */
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: var(--cream);
+  --popover-foreground: var(--ink);
+
+  --primary: var(--blue);
+  --primary-foreground: var(--cream);
+  --secondary: var(--lime);
+  --secondary-foreground: var(--ink);
+  --accent: var(--lime);
+  --accent-foreground: var(--ink);
+
+  --muted: #eef0df; /* tinted off-white */
+  --muted-foreground: #50514a;
+
+  --destructive: #e5484d;
+  --destructive-foreground: var(--cream);
+
+  --border: var(--ink);
+  --input: #d8dac6;
+  --ring: var(--blue);
+
+  --chart-1: var(--blue);
+  --chart-2: var(--lime);
+  --chart-3: var(--ink);
+  --chart-4: #50514a;
+  --chart-5: #d8dac6;
+
+  --radius: 0.25rem;
+
+  --sidebar: var(--cream);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--blue);
+  --sidebar-primary-foreground: var(--cream);
+  --sidebar-accent: var(--lime);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--ink);
+  --sidebar-ring: var(--blue);
 }
 
+/* The site ships light-first; .dark inverts onto the ink base. */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  /* Updated dark mode primary to lighter golden */
-  --primary: oklch(0.75 0.15 85); /* Lighter golden for dark mode */
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  /* Updated dark mode accent to lighter red */
-  --accent: oklch(0.65 0.22 25); /* Lighter red accent for dark mode */
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.75 0.15 85 / 0.5);
-  /* Updated dark mode chart colors */
-  --chart-1: oklch(0.75 0.15 85);
-  --chart-2: oklch(0.65 0.22 25);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.75 0.15 85);
-  --sidebar-primary-foreground: oklch(0.145 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.75 0.15 85 / 0.5);
+  --background: var(--ink);
+  --foreground: var(--cream);
+  --card: #161617;
+  --card-foreground: var(--cream);
+  --popover: #161617;
+  --popover-foreground: var(--cream);
+  --primary: var(--lime);
+  --primary-foreground: var(--ink);
+  --secondary: var(--blue);
+  --secondary-foreground: var(--cream);
+  --accent: var(--lime);
+  --accent-foreground: var(--ink);
+  --muted: #1d1d1f;
+  --muted-foreground: #a6a79c;
+  --border: #2a2a2c;
+  --input: #2a2a2c;
+  --ring: var(--lime);
 }
 
 @theme inline {
@@ -111,10 +104,18 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Direct brand colour utilities: bg-lime, text-blue, bg-ink, bg-cream … */
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --color-lime: var(--lime);
+  --color-blue: var(--blue);
+
+  --radius-sm: calc(var(--radius));
+  --radius-md: calc(var(--radius) + 2px);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -123,10 +124,10 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* Updated font family variables to use Montserrat as primary */
-  --font-sans: var(--font-montserrat);
-  --font-heading: var(--font-montserrat);
-  --font-hero: var(--font-orbitron);
+
+  /* Type — a single heavy grotesque, weight-contrasted (brand book style) */
+  --font-sans: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif;
 }
 
 @layer base {
@@ -134,63 +135,159 @@
     @apply border-border outline-ring/50;
   }
 
-  /* Added overflow control to prevent horizontal scrolling */
   html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
+    font-feature-settings: 'ss01', 'cv01';
   }
 
-  /* Force navigation title color with maximum specificity */
-  nav h1 {
-    color: #d4af37 !important;
-    -webkit-text-fill-color: #d4af37 !important;
+  /* Lime selection, ink text — straight out of the brand book */
+  ::selection {
+    background: var(--lime);
+    color: var(--ink);
   }
 
-  /* Hero section keeps Orbitron font */
-  .font-hero {
-    font-family: var(--font-hero);
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  /*
+    Display type: heavy, tight, uppercase — the brand book's primary voice.
+    Use .font-display on big headlines and wordmarks.
+  */
+  .font-display {
+    font-family: var(--font-display);
     font-weight: 900;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    text-transform: uppercase;
+  }
+
+  /* Numbered section index — e.g. (003) SCHEDULE */
+  .brand-index {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /*
+    Brutalist card: hard ink border, square-ish corners, a chunky offset shadow
+    that snaps in on hover. Reads as the brand book's blocky, high-contrast panels.
+  */
+  .brand-card {
+    border: 2px solid var(--ink);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 0 var(--ink);
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      background-color 0.18s ease,
+      color 0.18s ease;
+  }
+
+  .brand-card-interactive:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 0 var(--ink);
+  }
+
+  /* Pill chip used for tags / years */
+  .brand-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    border: 2px solid currentColor;
+    border-radius: 999px;
+    padding: 0.25em 0.85em;
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+
+  /* Duotone treatment for photography: grayscale base + brand blue cast */
+  .img-duotone {
+    filter: grayscale(1) contrast(1.12) brightness(0.92);
+  }
+
+  /* Climbing-wall dotted grid, used as a subtle background texture */
+  .climbing-grid {
+    background-image: radial-gradient(var(--ink) 1.25px, transparent 1.25px);
+    background-size: 26px 26px;
+    background-position: -13px -13px;
+    opacity: 1;
+  }
+
+  /* Decorative "holds" used on the 404 / empty states */
+  .climbing-hold {
+    background: var(--lime);
+    border: 2px solid var(--ink);
   }
 }
 
-/* Added subtle hero image animations for gentle movement */
-@keyframes heroFloat {
-  0%,
-  100% {
-    transform: translateY(0px) scale(1.05);
+/* ---- Marquee ticker --------------------------------------------------- */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+.marquee-reverse {
+  animation-direction: reverse;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  50% {
-    transform: translateY(-10px) scale(1.05);
+  to {
+    transform: translateX(-50%);
   }
 }
 
+/* ---- Sparkle spin ----------------------------------------------------- */
+@keyframes sparkleSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sparkle-spin {
+  animation: sparkleSpin 12s linear infinite;
+}
+
+/* ---- Hero image motion (retained, calmer) ----------------------------- */
 @keyframes heroZoom {
   0%,
   100% {
-    transform: scale(1.05);
+    transform: scale(1.06);
   }
   50% {
-    transform: scale(1.08);
+    transform: scale(1.12);
   }
 }
 
-/* Added parallax effect for hero images */
-@keyframes heroParallax {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
-  100% {
-    transform: translateX(0px);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
