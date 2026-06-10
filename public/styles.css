@@ -1,0 +1,236 @@
+/* ============================================================
+   NUS BOULDERACTIVE 2026 — Design System
+   Helvetica Black display · JetBrains Mono labels
+   Off-white / warm-ink / lime / electric-blue
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+:root {
+  /* brand palette */
+  --off-white: #FEFFF2;
+  --ink: #0C0C09;
+  --ink-soft: #1A1A15;
+  --lime: #D0F537;
+  --blue: #012BFC;
+  --grey: #8C8C82;
+  --hairline: rgba(12,12,9,0.14);
+
+  /* accent (switchable via tweak) */
+  --accent: var(--lime);
+  --accent-ink: var(--ink);     /* readable text color ON the accent */
+
+  /* themed surfaces (light default) */
+  --bg: var(--off-white);
+  --fg: var(--ink);
+  --fg-dim: #5b5b51;
+  --surface: #ffffff;
+  --line: var(--hairline);
+  --invert-bg: var(--ink);
+  --invert-fg: var(--off-white);
+
+  /* type */
+  --font-display: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-text: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --tracking: -0.04em;          /* tweakable display tightness */
+  --maxw: 1320px;
+  --gut: clamp(20px, 5vw, 72px);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"] {
+  --bg: var(--ink);
+  --fg: var(--off-white);
+  --fg-dim: #9a9a8f;
+  --surface: #141410;
+  --line: rgba(254,255,242,0.16);
+  --invert-bg: var(--off-white);
+  --invert-fg: var(--ink);
+}
+
+[data-accent="blue"] { --accent: var(--blue); --accent-ink: var(--off-white); }
+[data-accent="lime"] { --accent: var(--lime); --accent-ink: var(--ink); }
+
+/* ----------------------------------------------------------- reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
+body {
+  font-family: var(--font-text);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.45;
+  overflow-x: clip;
+  transition: background .4s var(--ease), color .4s var(--ease);
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; border: none; background: none; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+/* ----------------------------------------------------------- layout */
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gut); }
+.section { padding-block: clamp(64px, 9vw, 140px); position: relative; }
+.eyebrow {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-dim);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--accent); display: inline-block; }
+
+/* ----------------------------------------------------------- type */
+.display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: var(--tracking);
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+.d-hero  { font-size: clamp(64px, 15.5vw, 260px); }
+.d-xl    { font-size: clamp(44px, 8.5vw, 132px); }
+.d-lg    { font-size: clamp(34px, 5.2vw, 78px); }
+.d-md    { font-size: clamp(26px, 3.4vw, 46px); }
+.lead    { font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; color: var(--fg-dim); max-width: 56ch; }
+.mono    { font-family: var(--font-mono); }
+.tag {
+  font-family: var(--font-mono); font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------- route marker chip */
+.marker {
+  font-family: var(--font-mono); font-weight: 800; font-size: 12px;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 11px 5px 9px; border: 1.5px solid currentColor; border-radius: 999px;
+  white-space: nowrap;
+}
+.marker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.marker.solid { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.marker.square { border-radius: 3px; }
+
+/* ----------------------------------------------------------- buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono); font-weight: 700; font-size: 13px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 16px 26px; border-radius: 2px; border: 1.5px solid var(--fg);
+  background: var(--fg); color: var(--bg);
+  transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease);
+}
+.btn .arrow { transition: transform .3s var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+.btn:hover .arrow { transform: translateX(5px); }
+.btn.accent { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.ghost { background: transparent; color: var(--fg); }
+.btn.ghost:hover { background: var(--fg); color: var(--bg); }
+.btn.lg { padding: 20px 34px; font-size: 14px; }
+.btn.sm { padding: 11px 18px; font-size: 11.5px; }
+
+/* ----------------------------------------------------------- duotone image */
+.duo { position: relative; overflow: hidden; background: var(--ink); }
+.duo img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(1) contrast(1.12) brightness(1.02);
+  transition: transform .9s var(--ease), filter .5s var(--ease);
+}
+.duo::after {
+  content: ""; position: absolute; inset: 0; mix-blend-mode: screen; pointer-events: none;
+  background: var(--accent); opacity: 0; transition: opacity .5s var(--ease);
+}
+.duo::before {
+  content: ""; position: absolute; inset: 0; mix-blend-mode: multiply; pointer-events: none;
+  background: #2a2a55; opacity: 0; transition: opacity .5s var(--ease); z-index: 1;
+}
+[data-photo="duo"] .duo::after { opacity: 0.62; }
+[data-photo="duo"] .duo::before { opacity: 0.55; }
+[data-photo="duo"] .duo img { filter: grayscale(1) contrast(1.3) brightness(1.05); }
+.duo.hoverzoom:hover img { transform: scale(1.05); }
+
+/* grain overlay */
+.grain::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2; opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* ----------------------------------------------------------- checkerboard motif */
+.checker {
+  --c: var(--accent);
+  background-color: transparent;
+  background-image:
+    linear-gradient(45deg, var(--c) 25%, transparent 25%, transparent 75%, var(--c) 75%),
+    linear-gradient(45deg, var(--c) 25%, transparent 25%, transparent 75%, var(--c) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  opacity: 0.9;
+}
+
+/* ----------------------------------------------------------- cards */
+.card {
+  background: var(--surface); border: 2px solid var(--fg);
+  border-radius: 3px;
+  padding: clamp(22px, 2.4vw, 34px);
+  box-shadow: 0 0 0 0 var(--fg);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), color .2s var(--ease);
+}
+.card:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 0 var(--fg); }
+
+/* climbing-wall dotted grid texture */
+.dotgrid { background-image: radial-gradient(var(--fg) 1.25px, transparent 1.25px); background-size: 26px 26px; background-position: -13px -13px; }
+
+/* ----------------------------------------------------------- nav */
+.nav {
+  position: sticky; top: 0; z-index: 80;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1.5px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+.nav-logo { display: flex; align-items: center; gap: 11px; font-family: var(--font-display); font-weight: 800; letter-spacing: -0.03em; font-size: 19px; text-transform: uppercase; }
+.nav-logo .mark { width: 30px; height: 30px; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); border-radius: 50%; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-link {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 9px 14px; border-radius: 2px; color: var(--fg); transition: color .2s, background .2s; position: relative;
+}
+.nav-link:hover { color: var(--accent-ink); background: var(--accent); }
+.nav-link.active { color: var(--accent-ink); background: var(--accent); }
+.nav-toggle { display: none; }
+
+/* ----------------------------------------------------------- marquee */
+.marquee { overflow: hidden; white-space: nowrap; display: flex; }
+.marquee-track { display: inline-flex; gap: 0; animation: scrollx 28s linear infinite; will-change: transform; }
+.marquee-track > * { padding-inline: 0.18em; }
+@keyframes scrollx { to { transform: translateX(-50%); } }
+[data-motion="low"] .marquee-track { animation: none; }
+
+/* ----------------------------------------------------------- reveal */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+[data-motion="low"] .reveal { opacity: 1; transform: none; transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .marquee-track { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ----------------------------------------------------------- footer */
+.footer { background: var(--invert-bg); color: var(--invert-fg); }
+
+/* divider line of dots (route-wall texture) */
+.dotline { height: 1.5px; background: var(--line); position: relative; }
+
+/* utility */
+.stack { display: flex; flex-direction: column; }
+.row { display: flex; }
+.center { display: grid; place-items: center; }
+.hide { display: none !important; }
+
+/* ----------------------------------------------------------- responsive */
+@media (max-width: 860px) {
+  .nav-links.desktop { display: none; }
+  .nav-toggle { display: inline-flex; }
+}

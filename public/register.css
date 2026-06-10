@@ -1,0 +1,88 @@
+/* register.css — registration flow styles */
+.reg-hero { padding-block: clamp(40px,6vw,80px) clamp(26px,3vw,44px); border-bottom: 1.5px solid var(--line); }
+.reg-hero-inner h1 { margin: 16px 0 clamp(28px,4vw,44px); }
+
+/* stepper */
+.stepper { display: flex; gap: 0; border: 1.5px solid var(--line); border-radius: 2px; overflow: hidden; max-width: 560px; }
+.step { flex: 1; display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-right: 1.5px solid var(--line); opacity: 0.5; transition: all .3s var(--ease); }
+.step:last-child { border-right: none; }
+.step.on { opacity: 1; background: var(--accent); color: var(--accent-ink); }
+.step.done { opacity: 1; }
+.step-n { font-weight: 800; font-size: 13px; }
+.step-label { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* body */
+.reg-body { max-width: 760px; }
+.reg-step { margin-bottom: 40px; }
+.reg-q { margin-bottom: 28px; }
+
+/* category select */
+.reg-cats { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+.reg-cat { position: relative; text-align: left; display: flex; flex-direction: column; gap: 6px; cursor: pointer; padding: 24px; }
+.reg-cat:hover { border-color: var(--fg); }
+.reg-cat.on { border-color: var(--fg); box-shadow: inset 0 0 0 1.5px var(--fg); }
+.reg-cat-code { font-size: 13px; font-family: var(--font-mono); font-weight: 800; color: var(--accent); letter-spacing: 0.1em; }
+[data-accent="lime"] .reg-cat-code { color: var(--fg); }
+.reg-cat-name { margin-top: 4px; }
+.reg-cat-sub { color: var(--fg-dim); font-size: 14px; }
+.reg-radio { position: absolute; top: 22px; right: 22px; width: 20px; height: 20px; border: 1.5px solid var(--line); border-radius: 50%; transition: all .2s; }
+.reg-radio.on { border-color: var(--accent); background: var(--accent); box-shadow: inset 0 0 0 4px var(--bg); }
+
+.reg-gender { margin-top: 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.reg-sub-label { color: var(--fg-dim); }
+
+/* segmented control */
+.seg { display: inline-flex; border: 1.5px solid var(--line); border-radius: 2px; overflow: hidden; }
+.seg.tee { flex-wrap: wrap; }
+.seg-btn { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; padding: 11px 20px; border-right: 1.5px solid var(--line); transition: all .2s; }
+.seg-btn:last-child { border-right: none; }
+.seg-btn:hover { background: var(--surface); }
+.seg-btn.on { background: var(--accent); color: var(--accent-ink); }
+
+/* form */
+.reg-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field-wrap { display: flex; flex-direction: column; gap: 9px; }
+.field-wrap:nth-child(1), .field-wrap:nth-child(6), .reg-agree { grid-column: 1 / -1; }
+.field-label { font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-dim); }
+.req { color: var(--accent); margin-left: 3px; }
+[data-accent="lime"] .req { color: var(--blue); }
+.reg-agree { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: var(--fg-dim); margin-top: 4px; cursor: pointer; }
+.reg-agree input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--blue); flex-shrink: 0; }
+
+/* review */
+.review { padding: 0; }
+.review-row { display: grid; grid-template-columns: 200px 1fr; gap: 20px; padding: 18px clamp(20px,2.4vw,30px); border-bottom: 1.5px solid var(--line); }
+.review-row:last-child { border-bottom: none; }
+.review-k { color: var(--fg-dim); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; align-self: center; }
+.review-v { font-size: 16px; font-weight: 500; }
+
+/* nav */
+.reg-nav { display: flex; justify-content: space-between; gap: 16px; padding-top: 28px; border-top: 1.5px solid var(--line); }
+.reg-hint { color: var(--fg-dim); font-size: 12px; margin-top: 14px; text-align: right; }
+
+/* success */
+.reg-success { min-height: 80vh; display: flex; align-items: center; padding-block: clamp(40px,6vw,90px); }
+.reg-success-inner { max-width: 760px; }
+.reg-success h1 { margin: 18px 0 22px; }
+.reg-success .lead { color: var(--fg); }
+.reg-success .lead strong { color: var(--fg); }
+.reg-success .hero-cta { margin-top: 36px; }
+.ticket { display: grid; grid-template-columns: 1fr 1.3fr; margin-top: 40px; border: 1.5px solid var(--fg); max-width: 620px; position: relative; }
+.ticket::before { content: ""; position: absolute; left: 38%; top: 0; bottom: 0; border-left: 2px dashed var(--line); }
+.ticket-l { background: var(--accent); color: var(--accent-ink); padding: 26px; display: flex; flex-direction: column; gap: 6px; }
+.ticket-label { font-size: 11px; letter-spacing: 0.14em; opacity: 0.7; }
+.ticket-bib { font-size: clamp(30px,4vw,46px); font-weight: 800; letter-spacing: -0.03em; line-height: 0.95; margin: 2px 0 6px; }
+.ticket-l .mono { font-size: 12px; font-weight: 700; }
+.ticket-r { padding: 26px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+.ticket-r .mono { font-size: 14px; }
+.ticket-dim { color: var(--fg-dim); font-size: 12px !important; }
+
+@media (max-width: 680px) {
+  .reg-cats, .reg-form { grid-template-columns: 1fr; }
+  .stepper { max-width: none; }
+  .step-label { display: none; }
+  .step { justify-content: center; }
+  .review-row { grid-template-columns: 1fr; gap: 6px; }
+  .ticket { grid-template-columns: 1fr; }
+  .ticket::before { display: none; }
+}
