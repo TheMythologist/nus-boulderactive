@@ -1,59 +1,25 @@
-import type React from 'react';
+import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Inter, Orbitron, Montserrat } from 'next/font/google';
-import { Footer } from '@/components/footer';
-import { Navigation } from '@/components/navigation';
-import { Toaster } from '@/components/ui/sonner';
 import './globals.css';
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-  weight: ['400', '500', '600', '700'],
-});
-
-const orbitron = Orbitron({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-orbitron',
-  weight: ['400', '700', '900'],
-});
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-montserrat',
-  weight: ['300', '400', '500', '600', '700', '800'],
-});
-
+// The live site is the self-contained BoulderActive 2026 prototype at
+// public/index.html (served at "/" via the rewrite in next.config.ts), which
+// carries its own <head>, fonts and styles. This root layout only wraps the
+// remaining App Router routes (e.g. the 404 page).
 export const metadata: Metadata = {
-  title: 'NUS BoulderActive 2025',
+  title: 'NUS BoulderActive 2026',
   description:
-    'Join the ultimate bouldering competition at NUS Singapore. Test your limits, conquer new heights, and be part of the climbing community.',
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/logo.png',
-  },
+    "NUS BoulderActive 2026 — Singapore's premier bouldering competition. 9–11 October 2026. Push your limits, conquer new heights.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${orbitron.variable} ${montserrat.variable} antialiased`}
-    >
-      <body className="font-sans" suppressHydrationWarning>
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-        <Toaster />
-      </body>
+    <html lang="en">
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
