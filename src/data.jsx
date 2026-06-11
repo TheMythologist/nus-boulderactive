@@ -10,6 +10,7 @@ const BA = {
     venue: "Boulder+ Chevrons",
     venueAddress: "The Chevrons · 48 Boon Lay Way, Singapore 609961",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Boulder%2B%20Chevrons%2C%2048%20Boon%20Lay%20Way",
+    mapEmbedUrl: "https://www.google.com/maps?q=Boulder%2B%20Chevrons%2C%2048%20Boon%20Lay%20Way%2C%20Singapore%20609961&z=16&output=embed",
     city: "Singapore",
     founded: "1997",
     tagline: "Push your limits. Conquer new heights.",
