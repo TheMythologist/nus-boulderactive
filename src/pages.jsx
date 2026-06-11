@@ -155,7 +155,7 @@ function RulesPage({ go }) {
               {[
                 ["Scoring", "Tops and zones are scored with attempts as the tiebreak, following IFSC-style ranking. Live standings update on ClimbBuddy throughout."],
                 ["Isolation", "Finalists enter isolation ahead of their round. Observation periods are strictly timed."],
-                ["Eligibility", "Open to all. Climbers self-select the category matching their level; organisers may re-seed for fairness."],
+                ["Eligibility", "Each category has its own requirements - Novice is for first-time competitors, Intermediate for developing climbers, and Open welcomes everyone, including national team climbers. Register in a category you're ineligible for and you'll be disqualified and moved up a tier."],
                 ["Conduct", "Respect the holds, the volunteers and your fellow climbers. Brushing between attempts is encouraged."],
               ].map(([t, d], i) => (
                 <Rv key={t} delay={i * 60} className="rule-item">
