@@ -5,6 +5,8 @@
 .sec-head h2 { margin-top: 14px; }
 .pt0 { padding-top: clamp(34px, 5vw, 60px); }
 .note { font-size: 11.5px; color: var(--fg-dim); letter-spacing: 0.06em; margin-top: 30px; }
+.note-link { color: var(--fg); text-decoration: underline; text-underline-offset: 2px; }
+.note-link:hover { color: var(--accent-ink); background: var(--accent); }
 
 /* =================================================== HERO: PHOTO */
 .hero { position: relative; }
@@ -227,11 +229,14 @@
 .loc-tba { padding: clamp(28px,3.5vw,52px); }
 .loc-tba-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px,4vw,56px); align-items: center; }
 .loc-tba-title { margin: 18px 0 22px; }
+.loc-addr { color: var(--fg-dim); font-size: 13px; letter-spacing: 0.04em; margin-top: 18px; }
+.loc-cta { margin-top: 26px; }
 .loc-form { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
 .loc-form .field { flex: 1; min-width: 220px; }
 .loc-sent { color: var(--accent-ink); background: var(--accent); display: inline-block; padding: 12px 18px; margin-top: 24px; font-weight: 700; }
 [data-accent="lime"] .loc-sent { color: var(--ink); }
-.loc-map { position: relative; aspect-ratio: 1/1; border: 1.5px solid var(--fg); overflow: hidden; background: var(--surface); }
+.loc-map { display: block; position: relative; aspect-ratio: 1/1; border: 1.5px solid var(--fg); overflow: hidden; background: var(--surface); transition: border-color .2s; }
+.loc-map:hover { border-color: var(--accent); }
 .loc-map-grid { position: absolute; inset: 0; opacity: 0.16; }
 .loc-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 52px; color: var(--accent); }
 [data-accent="lime"] .loc-pin { color: var(--ink); }

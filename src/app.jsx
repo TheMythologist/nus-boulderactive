@@ -32,8 +32,9 @@ function useRoute() {
 
 function Nav({ route, go }) {
   const [open, setOpen] = useS(false);
+  const isActive = (key) => route === key || (key === "schedule" && route === "schedule-full");
   const link = (key) => (
-    <a key={key} className={`nav-link ${route === key ? "active" : ""}`}
+    <a key={key} className={`nav-link ${isActive(key) ? "active" : ""}`}
        href={"#/" + key} onClick={() => setOpen(false)}>{ROUTES[key].label}</a>
   );
   return (
@@ -141,6 +142,7 @@ function App() {
 
   let page;
   if (route === "schedule") page = <SchedulePage go={go} />;
+  else if (route === "schedule-full") page = <ScheduleDetailPage go={go} />;
   else if (route === "rules") page = <RulesPage go={go} />;
   else if (route === "location") page = <LocationPage go={go} />;
   else if (route === "register") page = <RegisterPage go={go} />;
