@@ -30,9 +30,10 @@ function SchedulePage({ go }) {
       <section className="section pt0">
         <div className="wrap">
           <div className="sched-soon">
-            <Rv><Mk solid>Timings TBA</Mk></Rv>
-            <Rv delay={60}><h2 className="display d-xl sched-soon-title">Dropping<br/>soon.</h2></Rv>
-            <Rv delay={120}><p className="lead">Three days of head-to-head bouldering across Novice, Intermediate, Open and Team. The full day-by-day running order is locked closer to the date — here's the shape of the weekend.</p></Rv>
+            <Rv><Mk solid>{BA.event.dateLong}</Mk></Rv>
+            <Rv delay={60}><h2 className="display d-xl sched-soon-title">Three days.<br/>One wall to top.</h2></Rv>
+            <Rv delay={120}><p className="lead">Head-to-head bouldering across Novice, Intermediate, Open and the Team Event. Carnival qualifiers open the weekend on the Small Island, the Team Event and semi-finals take over the comp wall, and every category settles it under the lights in Sunday's finals.</p></Rv>
+            <Rv delay={160}><Bn variant="accent" onClick={() => go("schedule-full")}>View full schedule</Bn></Rv>
           </div>
 
           <div className="sched-days">
@@ -40,7 +41,7 @@ function SchedulePage({ go }) {
               <Rv key={d.day} delay={i * 80} className="sched-day-card card">
                 <div className="sched-day-card-top">
                   <span className="display d-md">{d.day}</span>
-                  <Mk square>TBA</Mk>
+                  <Mk square>{d.wall}</Mk>
                 </div>
                 <span className="mono sched-date">{d.date}</span>
                 <p className="sched-focus">{d.focus}</p>
@@ -64,10 +65,63 @@ function SchedulePage({ go }) {
           </div>
 
           <div className="rules-cta">
-            <h3 className="display d-md">Be first to know.</h3>
-            <Bn variant="accent" href={BA.event.instagramUrl} target="_blank">Follow @{BA.event.instagram}</Bn>
+            <h3 className="display d-md">Want the minute-by-minute?</h3>
+            <Bn variant="accent" onClick={() => go("schedule-full")}>Full running order</Bn>
           </div>
           <p className="note mono">Schedule shape is indicative and subject to change. Final timings confirmed closer to the event.</p>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+/* -------------------------------------------------- SCHEDULE — FULL DETAIL */
+function ScheduleDetailPage({ go }) {
+  const [filter, setFilter] = uS("ALL");
+  const filterName = (CAT_FILTERS.find((c) => c.code === filter) || {}).name;
+  return (
+    <main>
+      <PageHero kicker="(02) Programme" title="Full schedule" sub={`Day-by-day running order — ${BA.event.dateLong}, ${BA.event.city}.`} />
+      <section className="section pt0">
+        <div className="wrap">
+          <div className="filter-row">
+            {CAT_FILTERS.map((c) => (
+              <button key={c.code} className={`chip ${filter === c.code ? "on" : ""}`} onClick={() => setFilter(c.code)}>{c.name}</button>
+            ))}
+          </div>
+
+          <div className="sched-full">
+            {BA.scheduleDetail.map((d) => {
+              const rows = d.rows.filter((r) => filter === "ALL" || r.cat === filter);
+              return (
+                <div key={d.day} className={`sched-day ${rows.length ? "" : "empty"}`}>
+                  <div className="sched-day-head">
+                    <span className="display d-md">{d.day}</span>
+                    <span className="mono sched-date">{d.date}</span>
+                    <span className="mono sched-date">{d.wall}</span>
+                  </div>
+                  <div className="sched-day-body">
+                    {rows.length
+                      ? rows.map((r, j) => (
+                          <div key={j} className="sched-row">
+                            <span className="mono">{r.time}</span>
+                            <span className="sched-evt">{r.evt}</span>
+                            {r.cat && <span className="mono sched-cat">{r.cat}</span>}
+                          </div>
+                        ))
+                      : <p className="sched-none mono">No {filterName} sessions on this day.</p>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <p className="note mono">Be at the Call Zone 5 minutes before your detail. Times are indicative and subject to change — final timings confirmed closer to the event.</p>
+
+          <div className="rules-cta">
+            <h3 className="display d-md">Back to the overview.</h3>
+            <Bn onClick={() => go("schedule")}>Schedule overview</Bn>
+          </div>
         </div>
       </section>
     </main>
@@ -144,8 +198,6 @@ function FaqItem({ q, a, n }) {
 
 /* ---------------------------------------------------------------- LOCATION */
 function LocationPage({ go }) {
-  const [email, setEmail] = uS("");
-  const [sent, setSent] = uS(false);
   return (
     <main>
       <PageHero kicker="(05) Getting there" title="Location" />
@@ -154,23 +206,17 @@ function LocationPage({ go }) {
           <div className="loc-tba card">
             <div className="loc-tba-grid">
               <div>
-                <Mk solid>Venue TBA</Mk>
-                <h2 className="display d-lg loc-tba-title">Somewhere<br/>worth climbing to.</h2>
+                <Mk solid>Venue confirmed</Mk>
+                <h2 className="display d-lg loc-tba-title">Boulder+<br/>Chevrons.</h2>
                 <p className="lead">{BA.location.note}</p>
-                {sent ? (
-                  <p className="loc-sent mono">✓ You're on the list — see you in October.</p>
-                ) : (
-                  <form className="loc-form" onSubmit={(e) => { e.preventDefault(); if (email) setSent(true); }}>
-                    <input className="field" type="email" required placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <Bn variant="accent" arrow={false}>Notify me</Bn>
-                  </form>
-                )}
+                <p className="mono loc-addr">{BA.event.venueAddress}</p>
+                <div className="loc-cta"><Bn variant="accent" href={BA.event.mapUrl} target="_blank">Get directions</Bn></div>
               </div>
-              <div className="loc-map">
+              <a className="loc-map" href={BA.event.mapUrl} target="_blank" rel="noopener" aria-label="Open Boulder+ Chevrons in Google Maps">
                 <div className="loc-map-grid checker" />
                 <span className="loc-pin">◎</span>
-                <span className="mono loc-map-label">SINGAPORE · 01°21'N 103°49'E</span>
-              </div>
+                <span className="mono loc-map-label">BOULDER+ CHEVRONS · 01°20′N 103°45′E</span>
+              </a>
             </div>
           </div>
 
@@ -188,4 +234,4 @@ function LocationPage({ go }) {
   );
 }
 
-Object.assign(window, { SchedulePage, RulesPage, LocationPage });
+Object.assign(window, { SchedulePage, ScheduleDetailPage, RulesPage, LocationPage });

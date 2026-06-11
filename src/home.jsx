@@ -207,7 +207,7 @@ function SchedulePreview({ go }) {
     <section className="section sched-prev" id="schedule">
       <div className="wrap">
         <div className="sec-head">
-          <div><R><Eye>(02) Three Days</Eye></R><R delay={60}><h2 className="display d-lg">Dropping soon.</h2></R></div>
+          <div><R><Eye>(02) Three Days</Eye></R><R delay={60}><h2 className="display d-lg">The running order.</h2></R></div>
           <R delay={120}><B variant="ghost" onClick={() => go("schedule")}>Schedule details</B></R>
         </div>
         <div className="sched-grid">
@@ -215,7 +215,7 @@ function SchedulePreview({ go }) {
           <R key={d.day} delay={i * 90} className="sched-col card">
               <div className="sched-col-head">
                 <span className="display d-md">{d.day}</span>
-                <M square>TBA</M>
+                <M square>{d.wall}</M>
               </div>
               <span className="mono sched-date sched-col-date">{d.date}</span>
               <p className="sched-focus">{d.focus}</p>
@@ -227,7 +227,7 @@ function SchedulePreview({ go }) {
             </R>
           )}
         </div>
-        <R delay={120}><p className="note mono">Full day-by-day timings released closer to the event — follow @{BA.event.instagram} for the drop.</p></R>
+        <R delay={120}><p className="note mono">See the full day-by-day running order on the <a className="note-link" href="#/schedule-full">schedule page</a>. Timings subject to change closer to the event.</p></R>
       </div>
     </section>);
 

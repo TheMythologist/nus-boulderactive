@@ -7,7 +7,9 @@ const BA = {
     edition: "29th edition",
     dates: "9–11 OCT 2026",
     dateLong: "9–11 October 2026",
-    venue: "VENUE TBA",
+    venue: "Boulder+ Chevrons",
+    venueAddress: "The Chevrons · 48 Boon Lay Way, Singapore 609961",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Boulder%2B%20Chevrons%2C%2048%20Boon%20Lay%20Way",
     city: "Singapore",
     founded: "1997",
     tagline: "Push your limits. Conquer new heights.",
@@ -32,9 +34,50 @@ const BA = {
   ],
 
   schedule: [
-    { day: "DAY 01", date: "Fri · 9 Oct 2026", focus: "Qualifiers & opening rounds", rounds: ["Novice quals", "Intermediate quals", "Novice semis"] },
-    { day: "DAY 02", date: "Sat · 10 Oct 2026", focus: "Semifinals & Team Event", rounds: ["Open quals", "Inter semis", "Open semis", "Team Event"] },
-    { day: "DAY 03", date: "Sun · 11 Oct 2026", focus: "Finals", rounds: ["Novice finals", "Intermediate finals", "Open finals"] },
+    { day: "DAY 01", date: "Fri · 9 Oct 2026", wall: "Small Island", focus: "Carnival qualifiers & Novice semi-finals", rounds: ["Novice quals — Men & Women", "Intermediate quals — Men & Women", "Novice semi-finals · Top 20"] },
+    { day: "DAY 02", date: "Sat · 10 Oct 2026", wall: "Comp Wall", focus: "Open quals, Inter semis & the Team Event", rounds: ["Open quals — Men & Women", "Intermediate semi-finals · Top 20", "Team Event knockouts → Big Final", "Open semi-finals · Top 20"] },
+    { day: "DAY 03", date: "Sun · 11 Oct 2026", wall: "Comp Wall", focus: "Finals & prize presentation", rounds: ["Novice finals · Top 10", "Intermediate finals · Top 8", "Open Women & Men finals · Top 8", "Prize presentation"] },
+  ],
+
+  // Day-by-day running order for the full-schedule page. Times are start times;
+  // cat codes (NOV/INT/OPEN/TEAM) drive the category filter — "" rows are
+  // general items shown only under "All". Condensed from the BA2026 timetable.
+  scheduleDetail: [
+    {
+      day: "DAY 01", date: "Fri · 9 Oct 2026", wall: "Small Island · Carnival qualifiers",
+      rows: [
+        { time: "08:00", evt: "Registration & call zone opens", cat: "" },
+        { time: "10:00", evt: "Novice Men · Qualifiers", cat: "NOV" },
+        { time: "13:00", evt: "Novice Women · Qualifiers", cat: "NOV" },
+        { time: "14:20", evt: "Intermediate Men · Qualifiers", cat: "INT" },
+        { time: "14:40", evt: "Novice Men · Semi-Finals — Top 20", cat: "NOV" },
+        { time: "15:00", evt: "Intermediate Women · Qualifiers", cat: "INT" },
+        { time: "15:10", evt: "Novice Women · Semi-Finals — Top 20", cat: "NOV" },
+      ],
+    },
+    {
+      day: "DAY 02", date: "Sat · 10 Oct 2026", wall: "Comp Wall · Team Event + Open quals / Inter semis",
+      rows: [
+        { time: "08:00", evt: "Open Men · Qualifiers", cat: "OPEN" },
+        { time: "09:00", evt: "Open Women · Qualifiers", cat: "OPEN" },
+        { time: "09:00", evt: "Team Event · Seeding round", cat: "TEAM" },
+        { time: "11:00", evt: "Intermediate Men · Semi-Final — Top 20", cat: "INT" },
+        { time: "11:30", evt: "Intermediate Women · Semi-Final — Top 20", cat: "INT" },
+        { time: "12:00", evt: "Team Event · Knockouts → Big Final", cat: "TEAM" },
+        { time: "15:00", evt: "Open Women · Semi-Final — Top 20", cat: "OPEN" },
+        { time: "18:00", evt: "Open Men · Semi-Final — Top 20", cat: "OPEN" },
+      ],
+    },
+    {
+      day: "DAY 03", date: "Sun · 11 Oct 2026", wall: "Comp Wall · Finals",
+      rows: [
+        { time: "09:30", evt: "Novice Finals — Top 10", cat: "NOV" },
+        { time: "12:00", evt: "Intermediate Finals — Top 8", cat: "INT" },
+        { time: "15:00", evt: "Open Women · Final — Top 8", cat: "OPEN" },
+        { time: "18:00", evt: "Open Men · Final — Top 8", cat: "OPEN" },
+        { time: "19:30", evt: "Prize Presentation", cat: "" },
+      ],
+    },
   ],
 
   formats: [
@@ -70,11 +113,11 @@ const BA = {
   },
 
   location: {
-    note: "Our 2026 venue will be announced soon. Drop your details and we'll be the first to tell you.",
+    note: "We're climbing at Boulder+ Chevrons — Singapore's largest bouldering gym, inside The Chevrons clubhouse at 48 Boon Lay Way. Easy to reach from Jurong East and built for a competition crowd.",
     transit: [
-      { label: "MRT", lines: ["Farrer Park (North-East Line) — 5 min walk", "Little India (NE / Downtown Line)"] },
-      { label: "BUS", lines: ["21 · 23 · 64 · 65 · 66 · 67 · 125 · 130", "Stops along Serangoon & Kitchener Road"] },
-      { label: "CAR", lines: ["Sheltered parking on-site", "Drop-off at main entrance"] },
+      { label: "MRT", lines: ["Jurong East (East-West / North-South Line)", "~10 min walk along Boon Lay Way"] },
+      { label: "BUS", lines: ["52 · 99 · 105 · 188 · 502", "Stops 28049 (outside) & 28041 (opposite)"] },
+      { label: "CAR", lines: ["Parking on-site at The Chevrons", "Free shuttle from Jurong East & IMM"] },
     ],
   },
 };
