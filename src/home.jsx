@@ -1,4 +1,4 @@
-/* home.jsx — landing page sections */
+/* home.jsx - landing page sections */
 const { Marker: M, Btn: B, DuoImage: Duo, Reveal: R, Eyebrow: Eye, Marquee: Mq } = window;
 
 /* ---------------------------------------------------------------- HERO */
@@ -41,7 +41,7 @@ function HeroPhoto({ go }) {
       </div>
       <div className="wrap hero-photo-inner">
         <div className="hero-top">
-          <M solid>9–11 OCT 2026</M>
+          <M solid>9-11 OCT 2026</M>
           <M>{BA.event.venue}</M>
           <M>SINGAPORE</M>
         </div>
@@ -63,9 +63,9 @@ function HeroDuo({ go }) {
     <header className="hero hero-duo">
       <div className="wrap hero-duo-grid">
         <div className="hero-duo-left">
-          <div className="hero-top"><M solid>9–11 OCT 2026</M><M>29TH EDITION</M></div>
+          <div className="hero-top"><M solid>9-11 OCT 2026</M><M>29TH EDITION</M></div>
           <h1 className="display d-xl">BEYOND<br />LIMITS.</h1>
-          <p className="lead">NUS BoulderActive {BA.event.year} — three days of competitive bouldering, {BA.event.venue.toLowerCase()}, {BA.event.city}.</p>
+          <p className="lead">NUS BoulderActive {BA.event.year} - three days of competitive bouldering, {BA.event.venue.toLowerCase()}, {BA.event.city}.</p>
           <div className="hero-cta">
             <B variant="accent" size="lg" onClick={() => go("register")}>Register now</B>
             <B variant="ghost" onClick={() => go("schedule")}>See schedule</B>
@@ -86,7 +86,7 @@ function HeroType({ go }) {
       <div className="wrap">
         <div className="hero-type-top">
           <Eye>NUS Climbing Club · Est. {BA.event.founded}</Eye>
-          <span className="mono hero-type-date">9–11 OCT 2026 / {BA.event.city}</span>
+          <span className="mono hero-type-date">9-11 OCT 2026 / {BA.event.city}</span>
         </div>
         <h1 className="display hero-type-word">
           <span>BOULDER</span>
@@ -108,12 +108,12 @@ function HeroKinetic({ go }) {
     <header className="hero hero-kinetic">
       <div className="kin-rows">
         <Mq items={[word, word, word]} className="kin-row" />
-        <Mq items={[<span className="display d-xl kin-word outline">2026&nbsp;·&nbsp;9–11 OCT&nbsp;·&nbsp;SINGAPORE&nbsp;·&nbsp;</span>]} className="kin-row rev" />
+        <Mq items={[<span className="display d-xl kin-word outline">2026&nbsp;·&nbsp;9-11 OCT&nbsp;·&nbsp;SINGAPORE&nbsp;·&nbsp;</span>]} className="kin-row rev" />
         <Mq items={[word, word, word]} className="kin-row" />
       </div>
       <div className="wrap kin-center">
         <div className="kin-card">
-          <div className="hero-top"><M solid>9–11 OCT 2026</M><M>{BA.event.venue}</M></div>
+          <div className="hero-top"><M solid>9-11 OCT 2026</M><M>{BA.event.venue}</M></div>
           <p className="lead">{BA.event.tagline} Join Singapore's premier bouldering competition.</p>
           <div className="hero-cta">
             <B variant="accent" size="lg" onClick={() => go("register")}>Register now</B>
@@ -184,7 +184,7 @@ function Vision() {
         </div>
         <R delay={120}>
           <p className="vision-statement" data-comment-anchor="b266d7431d-p-122-11">
-            Since <span className="vs-tag mono">1997</span>, NUS BoulderActive has become Singapore's <span className="vs-hl">premier bouldering competition</span> — bringing climbers of every level together in the spirit of challenge, friendship and growth.
+            Since <span className="vs-tag mono">1997</span>, NUS BoulderActive has become Singapore's <span className="vs-hl">premier bouldering competition</span> - bringing climbers of every level together in the spirit of challenge, friendship and growth.
           </p>
         </R>
         <div className="pillars">

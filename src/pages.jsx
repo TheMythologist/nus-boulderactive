@@ -1,4 +1,4 @@
-/* pages.jsx — Schedule, Rules, Location */
+/* pages.jsx - Schedule, Rules, Location */
 const { Marker: Mk, Btn: Bn, DuoImage: Du, Reveal: Rv, Eyebrow: Ey } = window;
 const { useState: uS } = React;
 
@@ -26,7 +26,7 @@ const CAT_FILTERS = [
 function SchedulePage({ go }) {
   return (
     <main>
-      <PageHero kicker="(02) Programme" title="Schedule" sub={`Three days of competition — ${BA.event.dateLong}, ${BA.event.city}.`} />
+      <PageHero kicker="(02) Programme" title="Schedule" sub={`Three days of competition - ${BA.event.dateLong}, ${BA.event.city}.`} />
       <section className="section pt0">
         <div className="wrap">
           <div className="sched-soon">
@@ -75,13 +75,13 @@ function SchedulePage({ go }) {
   );
 }
 
-/* -------------------------------------------------- SCHEDULE — FULL DETAIL */
+/* -------------------------------------------------- SCHEDULE - FULL DETAIL */
 function ScheduleDetailPage({ go }) {
   const [filter, setFilter] = uS("ALL");
   const filterName = (CAT_FILTERS.find((c) => c.code === filter) || {}).name;
   return (
     <main>
-      <PageHero kicker="(02) Programme" title="Full schedule" sub={`Day-by-day running order — ${BA.event.dateLong}, ${BA.event.city}.`} />
+      <PageHero kicker="(02) Programme" title="Full schedule" sub={`Day-by-day running order - ${BA.event.dateLong}, ${BA.event.city}.`} />
       <section className="section pt0">
         <div className="wrap">
           <div className="filter-row">
@@ -116,7 +116,7 @@ function ScheduleDetailPage({ go }) {
             })}
           </div>
 
-          <p className="note mono">Be at the Call Zone 5 minutes before your detail. Times are indicative and subject to change — final timings confirmed closer to the event.</p>
+          <p className="note mono">Be at the Call Zone 5 minutes before your detail. Times are indicative and subject to change - final timings confirmed closer to the event.</p>
 
           <div className="rules-cta">
             <h3 className="display d-md">Back to the overview.</h3>
@@ -189,7 +189,7 @@ function FaqItem({ q, a, n }) {
     <div className={`faq-item ${open ? "open" : ""}`}>
       <button className="faq-q" onClick={() => setOpen(!open)}>
         <span className="display d-md">{q}</span>
-        <span className="faq-sign mono">{open ? "–" : "+"}</span>
+        <span className="faq-sign mono">{open ? "-" : "+"}</span>
       </button>
       <div className="faq-a" style={{ maxHeight: open ? "200px" : "0" }}><p>{a}</p></div>
     </div>

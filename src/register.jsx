@@ -1,4 +1,4 @@
-/* register.jsx — multi-step registration flow */
+/* register.jsx - multi-step registration flow */
 const { Marker: Mr, Btn: Bt, Reveal: Rg, Eyebrow: Eb } = window;
 const { useState: ust } = React;
 
@@ -135,13 +135,13 @@ function StepDetails({ data, set }) {
 
 function StepReview({ data, cat }) {
   const rows = [
-    ["Category", `${cat ? cat.name : "—"}${data.gender && data.gender !== "Mixed" ? " · " + data.gender : ""}`],
-    ["Name", data.name || "—"],
-    ["Email", data.email || "—"],
-    ["Phone", data.phone || "—"],
-    ["University / club", data.affil || "—"],
-    ["Tee size", data.tee || "—"],
-    ["Notes", data.notes || "—"],
+    ["Category", `${cat ? cat.name : "-"}${data.gender && data.gender !== "Mixed" ? " · " + data.gender : ""}`],
+    ["Name", data.name || "-"],
+    ["Email", data.email || "-"],
+    ["Phone", data.phone || "-"],
+    ["University / club", data.affil || "-"],
+    ["Tee size", data.tee || "-"],
+    ["Notes", data.notes || "-"],
   ];
   return (
     <div className="reg-step">
@@ -173,7 +173,7 @@ function RegSuccess({ data, cat, go }) {
             <span className="mono">{cat ? cat.name : ""} {data.gender !== "Mixed" ? data.gender : ""}</span>
           </div>
           <div className="ticket-r">
-            <span className="mono">{data.name || "—"}</span>
+            <span className="mono">{data.name || "-"}</span>
             <span className="mono ticket-dim">{BA.event.dates} · {BA.event.city}</span>
             <span className="mono ticket-dim">{BA.event.venue}</span>
           </div>

@@ -1,4 +1,4 @@
-/* register.css — registration flow styles */
+/* register.css - registration flow styles */
 .reg-hero { padding-block: clamp(40px,6vw,80px) clamp(26px,3vw,44px); border-bottom: 1.5px solid var(--line); }
 .reg-hero-inner h1 { margin: 16px 0 clamp(28px,4vw,44px); }
 
