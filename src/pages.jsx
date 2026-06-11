@@ -212,11 +212,9 @@ function LocationPage({ go }) {
                 <p className="mono loc-addr">{BA.event.venueAddress}</p>
                 <div className="loc-cta"><Bn variant="accent" href={BA.event.mapUrl} target="_blank">Get directions</Bn></div>
               </div>
-              <a className="loc-map" href={BA.event.mapUrl} target="_blank" rel="noopener" aria-label="Open Boulder+ Chevrons in Google Maps">
-                <div className="loc-map-grid checker" />
-                <span className="loc-pin">◎</span>
-                <span className="mono loc-map-label">BOULDER+ CHEVRONS · 01°20′N 103°45′E</span>
-              </a>
+              <div className="loc-map">
+                <iframe src={BA.event.mapEmbedUrl} title="Map of Boulder+ Chevrons, 48 Boon Lay Way, Singapore" loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" />
+              </div>
             </div>
           </div>
 

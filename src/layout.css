@@ -235,8 +235,8 @@
 .loc-form .field { flex: 1; min-width: 220px; }
 .loc-sent { color: var(--accent-ink); background: var(--accent); display: inline-block; padding: 12px 18px; margin-top: 24px; font-weight: 700; }
 [data-accent="lime"] .loc-sent { color: var(--ink); }
-.loc-map { display: block; position: relative; aspect-ratio: 1/1; border: 1.5px solid var(--fg); overflow: hidden; background: var(--surface); transition: border-color .2s; }
-.loc-map:hover { border-color: var(--accent); }
+.loc-map { position: relative; aspect-ratio: 1/1; border: 1.5px solid var(--fg); overflow: hidden; background: var(--surface); }
+.loc-map iframe { display: block; width: 100%; height: 100%; border: 0; }
 .loc-map-grid { position: absolute; inset: 0; opacity: 0.16; }
 .loc-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 52px; color: var(--accent); }
 [data-accent="lime"] .loc-pin { color: var(--ink); }
