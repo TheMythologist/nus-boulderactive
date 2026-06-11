@@ -1,4 +1,4 @@
-/* app.jsx — shell: router, nav, footer, tweaks */
+/* app.jsx - shell: router, nav, footer, tweaks */
 const { useState: useS, useEffect: useE } = React;
 const { Btn: Button, Marker: Mark } = window;
 
@@ -92,7 +92,7 @@ function Footer({ go }) {
         <div className="footer-marquee">
           <div className="marquee"><div className="marquee-track">
             {[0,1].map((g)=>(<span key={g} style={{display:"inline-flex"}}>
-              <span className="display footer-mq-word">BOULDERACTIVE 2026&nbsp;✦&nbsp;9–11 OCT&nbsp;✦&nbsp;SINGAPORE&nbsp;✦&nbsp;</span>
+              <span className="display footer-mq-word">BOULDERACTIVE 2026&nbsp;✦&nbsp;9-11 OCT&nbsp;✦&nbsp;SINGAPORE&nbsp;✦&nbsp;</span>
             </span>))}
           </div></div>
         </div>

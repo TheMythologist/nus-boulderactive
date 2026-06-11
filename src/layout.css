@@ -1,4 +1,4 @@
-/* layout.css — section & component styles for BoulderActive 2026 */
+/* layout.css - section & component styles for BoulderActive 2026 */
 
 /* shared section heads */
 .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: clamp(34px, 5vw, 64px); flex-wrap: wrap; }
@@ -124,7 +124,7 @@
 .sched-round { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--fg-dim); }
 .sched-round-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
-/* schedule page — dropping soon */
+/* schedule page - dropping soon */
 .sched-soon { max-width: 760px; margin-bottom: clamp(40px,5vw,64px); }
 .sched-soon-title { margin: 18px 0 24px; }
 .sched-days { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-bottom: clamp(48px,6vw,80px); }

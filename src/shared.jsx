@@ -1,4 +1,4 @@
-/* shared.jsx — reusable primitives (exported to window) */
+/* shared.jsx - reusable primitives (exported to window) */
 const { useState, useEffect, useRef } = React;
 
 /* Route-marker chip */
