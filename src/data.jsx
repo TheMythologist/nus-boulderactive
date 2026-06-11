@@ -100,9 +100,7 @@ const BA = {
   ],
 
   faqs: [
-    { q: "Who can join?", a: "Anyone - from total beginners in Novice to elite climbers in Open. Pick the category that fits your level." },
-    { q: "What's included with registration?", a: "Competition entry for your chosen category, an event tee, and access to the full three-day festival." },
-    { q: "Do I need my own gear?", a: "Bring your own climbing shoes and chalk. Everything else - walls, holds, mats - is provided." },
+    { q: "Who can join?", a: "Anyone, but each category has its own rules - Novice is for first-time competitors, Intermediate for developing climbers, and Open welcomes all, including national team athletes. Pick the category you're eligible for; competing in one you're not means disqualification." },
     { q: "Where can I watch?", a: "Finals are streamed live on YouTube, and live scores run on ClimbBuddy throughout all three days." },
   ],
 
