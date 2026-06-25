@@ -41,7 +41,8 @@ function Nav({ route, go }) {
     <nav className="nav">
       <div className="wrap nav-inner">
         <a className="nav-logo" href="#/home">
-          <span className="mark">◎</span>
+          <img className="mark mark-light" src="/logo-light.png" alt="" aria-hidden="true" />
+          <img className="mark mark-dark" src="/logo-dark.png" alt="" aria-hidden="true" />
           <span>BOULDERACTIVE</span>
         </a>
         <div className="nav-links desktop">
