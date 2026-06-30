@@ -29,7 +29,7 @@ function DuoImage({ src, alt, className = "", hoverzoom = true, grain = false })
 }
 
 /* Scroll reveal wrapper */
-function Reveal({ children, delay = 0, as = "div", className = "", style = {} }) {
+function Reveal({ children, delay = 0, as = "div", className = "", style = {}, ...rest }) {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
@@ -41,7 +41,7 @@ function Reveal({ children, delay = 0, as = "div", className = "", style = {} })
     return () => io.disconnect();
   }, []);
   const Tag = as;
-  return <Tag ref={ref} className={`reveal ${className}`} style={{ transitionDelay: `${delay}ms`, ...style }}>{children}</Tag>;
+  return <Tag ref={ref} className={`reveal ${className}`} style={{ transitionDelay: `${delay}ms`, ...style }} {...rest}>{children}</Tag>;
 }
 
 /* Section eyebrow label */

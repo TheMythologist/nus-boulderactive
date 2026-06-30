@@ -1,6 +1,9 @@
 /* pages.jsx - Schedule, Rules, Location */
 const { Marker: Mk, Btn: Bn, DuoImage: Du, Reveal: Rv, Eyebrow: Ey } = window;
-const { useState: uS } = React;
+const { useState: uS, useEffect: uE } = React;
+
+/* turn a schedule "day" label into a stable anchor id, e.g. "DAY 01" -> "day-01" */
+const daySlug = (day) => day.toLowerCase().replace(/\s+/g, "-");
 
 function PageHero({ index, title, sub, kicker }) {
   return (
@@ -29,16 +32,12 @@ function SchedulePage({ go }) {
       <PageHero kicker="(02) Programme" title="Schedule" sub={`Three days of competition - ${BA.event.dateLong}, ${BA.event.city}.`} />
       <section className="section pt0">
         <div className="wrap">
-          <div className="sched-soon">
-            <Rv><Mk solid>{BA.event.dateLong}</Mk></Rv>
-            <Rv delay={60}><h2 className="display d-xl sched-soon-title">Three days.<br/>One wall to top.</h2></Rv>
-            <Rv delay={120}><p className="lead">Head-to-head bouldering across Novice, Intermediate, Open and the Team Event. Carnival qualifiers open the weekend on the Small Island, the Team Event and semi-finals take over the comp wall, and every category settles it under the lights in Sunday's finals.</p></Rv>
-            <Rv delay={160}><Bn variant="accent" onClick={() => go("schedule-full")}>View full schedule</Bn></Rv>
-          </div>
+          <Rv className="sched-soon-cta"><Bn variant="accent" onClick={() => go("schedule-full")}>View full schedule</Bn></Rv>
 
           <div className="sched-days">
             {BA.schedule.map((d, i) => (
-              <Rv key={d.day} delay={i * 80} className="sched-day-card card">
+              <Rv key={d.day} delay={i * 80} as="a" href={`#/schedule-full?${daySlug(d.day)}`}
+                  className="sched-day-card card is-clickable">
                 <div className="sched-day-card-top">
                   <span className="display d-md">{d.day}</span>
                   <Mk square>{d.wall}</Mk>
@@ -50,18 +49,6 @@ function SchedulePage({ go }) {
                 </ul>
               </Rv>
             ))}
-          </div>
-
-          <div className="sched-lineup">
-            <Rv><Ey>The lineup</Ey></Rv>
-            <div className="lineup-grid">
-              {BA.categories.map((c, i) => (
-                <Rv key={c.code} delay={i * 60} className="lineup-item">
-                  <span className="mono lineup-code">{c.code}</span>
-                  <div><span className="display d-md lineup-name">{c.name}</span><span className="mono lineup-sub">{c.sub}</span></div>
-                </Rv>
-              ))}
-            </div>
           </div>
 
           <div className="rules-cta">
@@ -79,6 +66,12 @@ function SchedulePage({ go }) {
 function ScheduleDetailPage({ go }) {
   const [filter, setFilter] = uS("ALL");
   const filterName = (CAT_FILTERS.find((c) => c.code === filter) || {}).name;
+  // jump to the day named in the "?day-xx" hash suffix, if any (e.g. from the overview cards)
+  uE(() => {
+    const id = location.hash.split("?")[1];
+    const el = id && document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
   return (
     <main>
       <PageHero kicker="(02) Programme" title="Full schedule" sub={`Day-by-day running order - ${BA.event.dateLong}, ${BA.event.city}.`} />
@@ -94,7 +87,7 @@ function ScheduleDetailPage({ go }) {
             {BA.scheduleDetail.map((d) => {
               const rows = d.rows.filter((r) => filter === "ALL" || r.cat === filter);
               return (
-                <div key={d.day} className={`sched-day ${rows.length ? "" : "empty"}`}>
+                <div key={d.day} id={daySlug(d.day)} className={`sched-day ${rows.length ? "" : "empty"}`}>
                   <div className="sched-day-head">
                     <span className="display d-md">{d.day}</span>
                     <span className="mono sched-date">{d.date}</span>
