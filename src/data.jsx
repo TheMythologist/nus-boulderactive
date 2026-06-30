@@ -14,7 +14,7 @@ const BA = {
     city: "Singapore",
     founded: "1997",
     tagline: "Push your limits. Conquer new heights.",
-    blurb: "Singapore's premier bouldering competition, organised by the NUS Climbing Club.",
+    blurb: "Singapore's premier bouldering competition, organised by the NUS Climbing Club and varsity team.",
     instagram: "nusboulderactive",
     instagramUrl: "https://www.instagram.com/nusboulderactive/",
     email: "boulderactivenus@gmail.com",
@@ -23,8 +23,7 @@ const BA = {
   pillars: [
     { n: "01", t: "Competitive Spirit", d: "Challenge yourself against Singapore's best climbers across Novice, Intermediate and Open categories." },
     { n: "02", t: "Inclusive Community", d: "Open to all skill levels, fostering friendship, mutual support and a shared love of the sport." },
-    { n: "03", t: "Dynamic Routes", d: "Expertly set problems that test technique, strength, creativity and nerve under pressure." },
-    { n: "04", t: "Personal Growth", d: "Push past your limits and discover new heights in your climbing journey." },
+    { n: "03", t: "Personal Growth", d: "Push past your limits and discover new heights in your climbing journey." },
   ],
 
   categories: [
@@ -36,7 +35,7 @@ const BA = {
 
   schedule: [
     { day: "DAY 01", date: "Fri · 9 Oct 2026", wall: "Small Island", focus: "Carnival qualifiers & Novice semi-finals", rounds: ["Novice quals - Men & Women", "Intermediate quals - Men & Women", "Novice semi-finals · Top 20"] },
-    { day: "DAY 02", date: "Sat · 10 Oct 2026", wall: "Comp Wall", focus: "Open quals, Inter semis & the Team Event", rounds: ["Open quals - Men & Women", "Intermediate semi-finals · Top 20", "Team Event knockouts → Big Final", "Open semi-finals · Top 20"] },
+    { day: "DAY 02", date: "Sat · 10 Oct 2026", wall: "Comp Wall", focus: "Open quals, Inter semis & the Team Event", rounds: ["Open quals - Men & Women", "Intermediate semi-finals · Top 20", "Team Event", "Open semi-finals · Top 20"] },
     { day: "DAY 03", date: "Sun · 11 Oct 2026", wall: "Comp Wall", focus: "Finals & prize presentation", rounds: ["Novice finals · Top 10", "Intermediate finals · Top 8", "Open Women & Men finals · Top 8", "Prize presentation"] },
   ],
 
@@ -64,7 +63,7 @@ const BA = {
         { time: "09:00", evt: "Team Event · Seeding round", cat: "TEAM" },
         { time: "11:00", evt: "Intermediate Men · Semi-Final - Top 20", cat: "INT" },
         { time: "11:30", evt: "Intermediate Women · Semi-Final - Top 20", cat: "INT" },
-        { time: "12:00", evt: "Team Event · Knockouts → Big Final", cat: "TEAM" },
+        { time: "12:00", evt: "Team Event", cat: "TEAM" },
         { time: "15:00", evt: "Open Women · Semi-Final - Top 20", cat: "OPEN" },
         { time: "18:00", evt: "Open Men · Semi-Final - Top 20", cat: "OPEN" },
       ],

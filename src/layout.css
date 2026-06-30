@@ -27,6 +27,7 @@
 @media (prefers-reduced-motion: reduce) { .hero-slide.on img { animation: none; } }
 .hero-top { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: clamp(22px, 4vw, 42px); }
 .hero-photo .hero-top .marker { color: var(--off-white); }
+.hero-photo .hero-top .marker.solid { color: var(--accent-ink); }
 .hero-word { color: var(--off-white); margin-bottom: clamp(26px, 4vw, 48px); }
 .hero-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; flex-wrap: wrap; }
 .hero-lead { color: rgba(254,255,242,0.82); }
@@ -105,7 +106,7 @@
   font-weight: 800; font-size: 0.46em; letter-spacing: 0.04em; vertical-align: 0.28em;
   border: 1.5px solid currentColor; border-radius: 999px; padding: 0.18em 0.5em; margin: 0 0.06em;
 }
-.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1.5px solid var(--line); }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1.5px solid var(--line); }
 .pillar { padding: clamp(26px,3vw,40px) clamp(20px,2vw,30px) 0 0; border-right: 1.5px solid var(--line); }
 .pillar:last-child { border-right: none; }
 .pillar-n { color: var(--accent); font-weight: 800; font-size: 13px; letter-spacing: 0.1em; }
@@ -113,32 +114,21 @@
 .pillar-d { color: var(--fg-dim); font-size: 15px; line-height: 1.5; padding-bottom: 8px; }
 
 /* =================================================== SCHEDULE PREVIEW */
-.sched-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-.sched-col { display: flex; flex-direction: column; }
-.sched-col-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.sched-col-head .display, .sched-day-card-top .display { white-space: nowrap; }
+.sched-day-card-top .display { white-space: nowrap; }
 .sched-date { color: var(--fg-dim); font-size: 12px; }
-.sched-col-date { margin-top: 12px; display: block; }
 .sched-focus { font-size: clamp(17px,1.7vw,21px); font-weight: 600; margin: 16px 0 18px; line-height: 1.2; text-wrap: balance; }
 .sched-rounds { list-style: none; display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 1.5px solid var(--line); margin-top: auto; }
 .sched-round { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--fg-dim); }
 .sched-round-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
-/* schedule page - dropping soon */
-.sched-soon { max-width: 760px; margin-bottom: clamp(40px,5vw,64px); }
-.sched-soon-title { margin: 18px 0 24px; }
+/* schedule page */
+.sched-soon-cta { margin-bottom: clamp(40px,5vw,64px); }
 .sched-days { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-bottom: clamp(48px,6vw,80px); }
 .sched-day-card { display: flex; flex-direction: column; }
+.sched-day-card.is-clickable { cursor: pointer; color: inherit; text-decoration: none; }
+.sched-day-card.is-clickable:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .sched-day-card .sched-date { display: block; margin-top: 6px; }
 .sched-day-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-.sched-lineup { margin-bottom: clamp(40px,5vw,64px); }
-.lineup-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0; margin-top: 26px; border-top: 1.5px solid var(--line); }
-.lineup-item { display: flex; align-items: center; gap: 20px; padding: clamp(18px,2.4vw,28px) 0; border-bottom: 1.5px solid var(--line); }
-.lineup-item:nth-child(odd) { border-right: 1.5px solid var(--line); padding-right: 28px; }
-.lineup-item:nth-child(even) { padding-left: 28px; }
-.lineup-code { font-family: var(--font-mono); font-weight: 800; font-size: 12px; letter-spacing: 0.1em; border: 1.5px solid currentColor; border-radius: 999px; padding: 7px 12px; flex-shrink: 0; }
-.lineup-name { display: block; line-height: 1; white-space: nowrap; }
-.lineup-sub { display: block; color: var(--fg-dim); font-size: 12px; letter-spacing: 0.06em; margin-top: 6px; }
 
 /* =================================================== CATEGORIES */
 .cat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
@@ -195,7 +185,7 @@
 .chip:hover { border-color: var(--fg); }
 .chip.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .sched-full { display: flex; flex-direction: column; gap: 0; border-top: 1.5px solid var(--fg); }
-.sched-day { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding-block: clamp(24px,3vw,40px); border-bottom: 1.5px solid var(--line); }
+.sched-day { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding-block: clamp(24px,3vw,40px); border-bottom: 1.5px solid var(--line); scroll-margin-top: 86px; }
 .sched-day.empty { opacity: 0.5; }
 .sched-day-head { position: sticky; top: 90px; align-self: start; }
 .sched-day-head .sched-date { display: block; margin-top: 8px; }
@@ -283,12 +273,8 @@ textarea.field { resize: vertical; }
 }
 @media (max-width: 860px) {
   .hero-duo-grid, .vision-head, .final-grid, .loc-tba-grid, .footer-top { grid-template-columns: 1fr; }
-  .sched-grid, .transit { grid-template-columns: 1fr; }
+  .transit { grid-template-columns: 1fr; }
   .sched-days { grid-template-columns: 1fr; }
-  .lineup-grid { grid-template-columns: 1fr; }
-  .lineup-item:nth-child(odd) { border-right: none; padding-right: 0; }
-  .lineup-item:nth-child(even) { padding-left: 0; }
-  .lineup-name { font-size: clamp(26px, 7vw, 40px); }
   .fmt-grid.wide { grid-template-columns: 1fr; }
   .sched-day { grid-template-columns: 1fr; gap: 12px; }
   .sched-day-head { position: static; }

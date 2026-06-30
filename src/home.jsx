@@ -43,7 +43,6 @@ function HeroPhoto({ go }) {
         <div className="hero-top">
           <M solid>9-11 OCT 2026</M>
           <M>{BA.event.venue}</M>
-          <M>SINGAPORE</M>
         </div>
         <h1 className="display d-hero hero-word">BOULDER<br />ACTIVE</h1>
         <div className="hero-foot">
@@ -184,7 +183,7 @@ function Vision() {
         </div>
         <R delay={120}>
           <p className="vision-statement" data-comment-anchor="b266d7431d-p-122-11">
-            Since <span className="vs-tag mono">1997</span>, NUS BoulderActive has become Singapore's <span className="vs-hl">premier bouldering competition</span> - bringing climbers of every level together in the spirit of challenge, friendship and growth.
+            Singapore's <span className="vs-hl">premier bouldering competition</span> since <span className="vs-tag mono">1997</span>
           </p>
         </R>
         <div className="pillars">
@@ -210,24 +209,7 @@ function SchedulePreview({ go }) {
           <div><R><Eye>(02) Three Days</Eye></R><R delay={60}><h2 className="display d-lg">The running order.</h2></R></div>
           <R delay={120}><B variant="ghost" onClick={() => go("schedule")}>Schedule details</B></R>
         </div>
-        <div className="sched-grid">
-          {BA.schedule.map((d, i) =>
-          <R key={d.day} delay={i * 90} className="sched-col card">
-              <div className="sched-col-head">
-                <span className="display d-md">{d.day}</span>
-                <M square>{d.wall}</M>
-              </div>
-              <span className="mono sched-date sched-col-date">{d.date}</span>
-              <p className="sched-focus">{d.focus}</p>
-              <ul className="sched-rounds">
-                {d.rounds.map((r, j) =>
-              <li key={j} className="sched-round"><span className="sched-round-dot" />{r}</li>
-              )}
-              </ul>
-            </R>
-          )}
-        </div>
-        <R delay={120}><p className="note mono">See the full day-by-day running order on the <a className="note-link" href="#/schedule-full">schedule page</a>. Timings subject to change closer to the event.</p></R>
+        <R delay={120}><p className="note mono">See the full day-by-day running order on the full <a className="note-link" href="#/schedule-full">schedule page</a>. Timings subject to change closer to the event.</p></R>
       </div>
     </section>);
 
@@ -268,19 +250,6 @@ function Formats({ go }) {
         <div className="sec-head">
           <div><R><Eye>(04) How it's climbed</Eye></R><R delay={60}><h2 className="display d-lg">Competition formats</h2></R></div>
           <R delay={120}><B variant="ghost" onClick={() => go("rules")}>Full rules</B></R>
-        </div>
-        <div className="fmt-grid">
-          {BA.formats.map((f, i) =>
-          <R key={f.code} delay={i * 70} className="fmt-card card">
-              <div className="fmt-head">
-                <h3 className="display d-md">{f.code}</h3>
-                <M square>{f.time}</M>
-              </div>
-              <ul className="fmt-rules">
-                {f.rules.map((r, j) => <li key={j}><span className="fmt-tick mono">→</span>{r}</li>)}
-              </ul>
-            </R>
-          )}
         </div>
       </div>
     </section>);

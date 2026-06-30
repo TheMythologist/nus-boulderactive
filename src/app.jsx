@@ -19,7 +19,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 }/*EDITMODE-END*/;
 
 function useRoute() {
-  const get = () => (location.hash.replace("#/", "") || "home");
+  // route name lives before any "?" target suffix, e.g. "#/schedule-full?day-01"
+  const get = () => (location.hash.replace("#/", "").split("?")[0] || "home");
   const [route, setRoute] = useS(get());
   useE(() => {
     const on = () => { setRoute(get()); window.scrollTo(0, 0); };
@@ -67,7 +68,7 @@ function Footer({ go }) {
         <div className="footer-top">
           <div className="footer-brand">
             <h2 className="display d-lg">BOULDER<br/>ACTIVE</h2>
-            <p className="footer-blurb">{BA.event.blurb} Pushing limits, conquering fears, building an inclusive climbing community since {BA.event.founded}.</p>
+            <p className="footer-blurb">{BA.event.blurb}</p>
             <a className="btn accent" href="#/register">Register now <span className="arrow">→</span></a>
           </div>
           <div className="footer-cols">
