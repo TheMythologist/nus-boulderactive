@@ -104,6 +104,7 @@ const BA = {
   ],
 
   links: {
+    register: "https://nusync.nus.edu.sg/nssc/rsvp_boot?id=380423",
     liveScores: "https://score.climbbuddy.io/",
     youtube: "https://www.youtube.com/playlist?list=PLwYq96iTjrtOetExD61Q-g-jN-YfQVU8A",
     photos: "https://linktr.ee/boulderactive2025",

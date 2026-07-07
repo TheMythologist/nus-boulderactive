@@ -48,7 +48,7 @@ function HeroPhoto({ go }) {
         <div className="hero-foot">
           <p className="lead hero-lead">{BA.event.tagline} Join Singapore's premier bouldering competition.</p>
           <div className="hero-cta">
-            <B variant="accent" size="lg" onClick={() => go("register")}>Register now</B>
+            <B variant="accent" size="lg" href={BA.links.register} target="_blank">Register now</B>
             <B variant="ghost" href={BA.links.liveScores} target="_blank">Live scores</B>
           </div>
         </div>
@@ -66,7 +66,7 @@ function HeroDuo({ go }) {
           <h1 className="display d-xl">BEYOND<br />LIMITS.</h1>
           <p className="lead">NUS BoulderActive {BA.event.year} - three days of competitive bouldering, {BA.event.venue.toLowerCase()}, {BA.event.city}.</p>
           <div className="hero-cta">
-            <B variant="accent" size="lg" onClick={() => go("register")}>Register now</B>
+            <B variant="accent" size="lg" href={BA.links.register} target="_blank">Register now</B>
             <B variant="ghost" onClick={() => go("schedule")}>See schedule</B>
           </div>
         </div>
@@ -94,7 +94,7 @@ function HeroType({ go }) {
         </h1>
         <div className="hero-type-foot">
           <p className="lead">{BA.event.tagline} Singapore's premier bouldering competition returns for its 29th edition.</p>
-          <B variant="accent" size="lg" onClick={() => go("register")}>Register now</B>
+          <B variant="accent" size="lg" href={BA.links.register} target="_blank">Register now</B>
         </div>
       </div>
     </header>);
@@ -115,7 +115,7 @@ function HeroKinetic({ go }) {
           <div className="hero-top"><M solid>9-11 OCT 2026</M><M>{BA.event.venue}</M></div>
           <p className="lead">{BA.event.tagline} Join Singapore's premier bouldering competition.</p>
           <div className="hero-cta">
-            <B variant="accent" size="lg" onClick={() => go("register")}>Register now</B>
+            <B variant="accent" size="lg" href={BA.links.register} target="_blank">Register now</B>
             <B variant="ghost" href={BA.links.liveScores} target="_blank">Live scores</B>
           </div>
         </div>
@@ -285,7 +285,7 @@ function FinalCTA({ go }) {
           <Eye>Registration open</Eye>
           <h2 className="display d-lg">Your spot<br />is waiting.</h2>
           <p className="lead">Lock in your category for BoulderActive 2026 and join Singapore's biggest bouldering weekend.</p>
-          <B variant="accent" size="lg" onClick={() => go("register")}>Register now</B>
+          <B variant="accent" size="lg" href={BA.links.register} target="_blank">Register now</B>
         </div>
       </div>
     </section>);

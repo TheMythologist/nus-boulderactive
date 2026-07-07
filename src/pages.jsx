@@ -168,7 +168,7 @@ function RulesPage({ go }) {
 
           <div className="rules-cta">
             <h3 className="display d-md">Ready to climb?</h3>
-            <Bn variant="accent" onClick={() => go("register")}>Register now</Bn>
+            <Bn variant="accent" href={BA.links.register} target="_blank">Register now</Bn>
           </div>
         </div>
       </section>
