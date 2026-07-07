@@ -34,9 +34,9 @@ const BA = {
   ],
 
   schedule: [
-    { day: "DAY 01", date: "Fri · 9 Oct 2026", wall: "Small Island", focus: "Carnival qualifiers & Novice semi-finals", rounds: ["Novice quals - Men & Women", "Intermediate quals - Men & Women", "Novice semi-finals · Top 20"] },
-    { day: "DAY 02", date: "Sat · 10 Oct 2026", wall: "Comp Wall", focus: "Open quals, Inter semis & the Team Event", rounds: ["Open quals - Men & Women", "Intermediate semi-finals · Top 20", "Team Event", "Open semi-finals · Top 20"] },
-    { day: "DAY 03", date: "Sun · 11 Oct 2026", wall: "Comp Wall", focus: "Finals & prize presentation", rounds: ["Novice finals · Top 10", "Intermediate finals · Top 8", "Open Women & Men finals · Top 8", "Prize presentation"] },
+    { day: "DAY 01", date: "Fri · 9 Oct 2026", focus: "Carnival qualifiers & Novice semi-finals", rounds: ["Novice quals - Men & Women", "Intermediate quals - Men & Women", "Novice semi-finals · Top 20"] },
+    { day: "DAY 02", date: "Sat · 10 Oct 2026", focus: "Open quals, Inter semis & the Team Event", rounds: ["Open quals - Men & Women", "Intermediate semi-finals · Top 20", "Team Event", "Open semi-finals · Top 20"] },
+    { day: "DAY 03", date: "Sun · 11 Oct 2026", focus: "Finals & prize presentation", rounds: ["Novice finals · Top 10", "Intermediate finals · Top 8", "Open Women & Men finals · Top 8", "Prize presentation"] },
   ],
 
   // Day-by-day running order for the full-schedule page. Times are start times;
@@ -44,7 +44,7 @@ const BA = {
   // general items shown only under "All". Condensed from the BA2026 timetable.
   scheduleDetail: [
     {
-      day: "DAY 01", date: "Fri · 9 Oct 2026", wall: "Small Island · Carnival qualifiers",
+      day: "DAY 01", date: "Fri · 9 Oct 2026",
       rows: [
         { time: "08:00", evt: "Registration & call zone opens", cat: "" },
         { time: "10:00", evt: "Novice Men · Qualifiers", cat: "NOV" },
@@ -56,7 +56,7 @@ const BA = {
       ],
     },
     {
-      day: "DAY 02", date: "Sat · 10 Oct 2026", wall: "Comp Wall · Team Event + Open quals / Inter semis",
+      day: "DAY 02", date: "Sat · 10 Oct 2026",
       rows: [
         { time: "08:00", evt: "Open Men · Qualifiers", cat: "OPEN" },
         { time: "09:00", evt: "Open Women · Qualifiers", cat: "OPEN" },
@@ -69,7 +69,7 @@ const BA = {
       ],
     },
     {
-      day: "DAY 03", date: "Sun · 11 Oct 2026", wall: "Comp Wall · Finals",
+      day: "DAY 03", date: "Sun · 11 Oct 2026",
       rows: [
         { time: "09:30", evt: "Novice Finals - Top 10", cat: "NOV" },
         { time: "12:00", evt: "Intermediate Finals - Top 8", cat: "INT" },
