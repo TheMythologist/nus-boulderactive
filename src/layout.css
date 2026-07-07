@@ -180,6 +180,8 @@
 .page-hero-sub { margin-top: 22px; }
 
 /* =================================================== SCHEDULE FULL */
+.sched-note { display: flex; gap: 12px; align-items: flex-start; max-width: 68ch; margin-bottom: 32px; padding: 14px 18px; font-size: 12.5px; line-height: 1.6; letter-spacing: 0.04em; color: var(--fg-dim); background: color-mix(in srgb, var(--accent) 10%, transparent); border-left: 2.5px solid var(--accent); border-radius: 2px; }
+.sched-note::before { content: "!"; flex: none; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 12px; margin-top: 1px; }
 .filter-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
 .chip { font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 16px; border: 1.5px solid var(--line); border-radius: 999px; transition: all .2s; }
 .chip:hover { border-color: var(--fg); }
@@ -198,11 +200,16 @@
 
 /* =================================================== RULES */
 .rules-general { margin-top: clamp(56px,7vw,96px); }
+.rules-doc-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: clamp(18px,2.4vw,26px) clamp(20px,2.6vw,30px); margin-bottom: clamp(30px,4vw,48px); border: 1.5px solid var(--fg); background: var(--bg); box-shadow: 8px 8px 0 var(--accent); }
+.rules-doc-note { font-size: 12.5px; letter-spacing: 0.04em; color: var(--fg-dim); max-width: 46ch; }
+
 .rules-list { margin-top: 30px; border-top: 1.5px solid var(--line); }
 .rule-item { display: grid; grid-template-columns: 60px 1fr; gap: 22px; padding-block: clamp(22px,3vw,34px); border-bottom: 1.5px solid var(--line); }
 .rule-n { color: var(--accent); font-weight: 800; font-size: 14px; }
 .rule-t { margin-bottom: 10px; }
 .rule-item p { color: var(--fg-dim); max-width: 70ch; }
+.rule-item p a { color: var(--fg); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
+.rule-item p a:hover { color: var(--accent-ink); background: var(--accent); }
 .faq { margin-top: clamp(56px,7vw,96px); }
 .faq-list { margin-top: 26px; border-top: 1.5px solid var(--line); }
 .faq-item { border-bottom: 1.5px solid var(--line); }

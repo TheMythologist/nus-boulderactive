@@ -34,9 +34,9 @@ const BA = {
   ],
 
   schedule: [
-    { day: "DAY 01", date: "Fri · 9 Oct 2026", focus: "Carnival qualifiers & Novice semi-finals", rounds: ["Novice quals - Men & Women", "Intermediate quals - Men & Women", "Novice semi-finals · Top 20"] },
+    { day: "DAY 01", date: "Fri · 9 Oct 2026", focus: "Novice + Intermediate qualifiers & Novice semi-finals", rounds: ["Novice quals - Men & Women", "Intermediate quals - Men & Women", "Novice semi-finals · Top 20"] },
     { day: "DAY 02", date: "Sat · 10 Oct 2026", focus: "Open quals, Inter semis & the Team Event", rounds: ["Open quals - Men & Women", "Intermediate semi-finals · Top 20", "Team Event", "Open semi-finals · Top 20"] },
-    { day: "DAY 03", date: "Sun · 11 Oct 2026", focus: "Finals & prize presentation", rounds: ["Novice finals · Top 10", "Intermediate finals · Top 8", "Open Women & Men finals · Top 8", "Prize presentation"] },
+    { day: "DAY 03", date: "Sun · 11 Oct 2026", focus: "Finals", rounds: ["Novice finals · Top 10", "Intermediate finals · Top 8", "Open Women & Men finals · Top 8", "Prize presentation"] },
   ],
 
   // Day-by-day running order for the full-schedule page. Times are start times;
@@ -46,24 +46,22 @@ const BA = {
     {
       day: "DAY 01", date: "Fri · 9 Oct 2026",
       rows: [
-        { time: "08:00", evt: "Registration & call zone opens", cat: "" },
         { time: "10:00", evt: "Novice Men · Qualifiers", cat: "NOV" },
         { time: "13:00", evt: "Novice Women · Qualifiers", cat: "NOV" },
         { time: "14:20", evt: "Intermediate Men · Qualifiers", cat: "INT" },
-        { time: "14:40", evt: "Novice Men · Semi-Finals - Top 20", cat: "NOV" },
         { time: "15:00", evt: "Intermediate Women · Qualifiers", cat: "INT" },
-        { time: "15:10", evt: "Novice Women · Semi-Finals - Top 20", cat: "NOV" },
+        { time: "15:40", evt: "Novice Men · Semi-Finals - Top 20", cat: "NOV" },
+        { time: "16:10", evt: "Novice Women · Semi-Finals - Top 20", cat: "NOV" },
       ],
     },
     {
       day: "DAY 02", date: "Sat · 10 Oct 2026",
       rows: [
-        { time: "08:00", evt: "Open Men · Qualifiers", cat: "OPEN" },
-        { time: "09:00", evt: "Open Women · Qualifiers", cat: "OPEN" },
-        { time: "09:00", evt: "Team Event · Seeding round", cat: "TEAM" },
+        { time: "09:30", evt: "Open Men · Qualifiers", cat: "OPEN" },
+        { time: "10:30", evt: "Open Women · Qualifiers", cat: "OPEN" },
         { time: "11:00", evt: "Intermediate Men · Semi-Final - Top 20", cat: "INT" },
         { time: "11:30", evt: "Intermediate Women · Semi-Final - Top 20", cat: "INT" },
-        { time: "12:00", evt: "Team Event", cat: "TEAM" },
+        { time: "12:00", evt: "Team Event · Knockout Rounds", cat: "TEAM" },
         { time: "15:00", evt: "Open Women · Semi-Final - Top 20", cat: "OPEN" },
         { time: "18:00", evt: "Open Men · Semi-Final - Top 20", cat: "OPEN" },
       ],
@@ -87,10 +85,12 @@ const BA = {
     ]},
     { code: "SESSION", time: "30 min / detail", rules: [
       "No demo climb", "5 problems per competitor", "Same detail enters together",
+      "1 hour isolation",
     ]},
     { code: "ROTATION", time: "4 min / route", rules: [
-      "No demo climb", "4 problems per competitor", "Sent out in gendered pairs",
+      "No demo climb", "3 problems (for Open) or 4 problems (for Novice and Intermediate) per competitor", "Sent out in gendered pairs",
       "Routes attempted in a set order", "Cannot view routes beforehand",
+      "1 hour isolation",
     ]},
     { code: "IFSC CONCURRENT", time: "Finals format", rules: [
       "No demo climb", "4 problems per competitor", "Sent out in reverse order",
@@ -108,6 +108,7 @@ const BA = {
     liveScores: "https://score.climbbuddy.io/",
     youtube: "https://www.youtube.com/playlist?list=PLwYq96iTjrtOetExD61Q-g-jN-YfQVU8A",
     photos: "https://linktr.ee/boulderactive2025",
+    rules: "https://docs.google.com/document/d/1gfJUA0lm6ImWcax55IBGieXLPD6qIFGoZhcLB0yAWso",
     feedback: "#",
   },
 
