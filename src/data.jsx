@@ -27,16 +27,16 @@ const BA = {
   ],
 
   categories: [
-    { code: "NOV", name: "Novice", sub: "Men · Women", desc: "Your first taste of competition climbing - approachable problems, big energy." },
-    { code: "INT", name: "Intermediate", sub: "Men · Women", desc: "For climbers ready to step up the grade and the stakes." },
-    { code: "OPEN", name: "Open", sub: "Men · Women", desc: "The sharp end - Singapore's strongest go head-to-head." },
-    { code: "TEAM", name: "Team Event", sub: "Mixed squads", desc: "Climb for your crew. Collective scores, collective glory." },
+    { code: "NOV", name: "Novice", sub: "Men · Women", desc: "For up-and-coming climbers." },
+    { code: "INT", name: "Intermediate", sub: "Men · Women", desc: "For experienced climbers." },
+    { code: "OPEN", name: "Open", sub: "Men · Women", desc: "For advanced and elite climbers." },
+    { code: "TEAM", name: "Team Event", sub: "Mixed squads", desc: "An exciting speed-based competition." },
   ],
 
   schedule: [
-    { day: "DAY 01", date: "Fri · 9 Oct 2026", focus: "Novice + Intermediate qualifiers & Novice semi-finals", rounds: ["Novice quals - Men & Women", "Intermediate quals - Men & Women", "Novice semi-finals · Top 20"] },
-    { day: "DAY 02", date: "Sat · 10 Oct 2026", focus: "Open quals, Inter semis & the Team Event", rounds: ["Open quals - Men & Women", "Intermediate semi-finals · Top 20", "Team Event", "Open semi-finals · Top 20"] },
-    { day: "DAY 03", date: "Sun · 11 Oct 2026", focus: "Finals", rounds: ["Novice finals · Top 10", "Intermediate finals · Top 8", "Open Women & Men finals · Top 8", "Prize presentation"] },
+    { day: "DAY 01", date: "Fri · 9 Oct 2026", rounds: ["Novice quals - Men & Women", "Intermediate quals - Men & Women", "Novice semi-finals · Top 20"] },
+    { day: "DAY 02", date: "Sat · 10 Oct 2026", rounds: ["Open quals - Men & Women", "Intermediate semi-finals · Top 20", "Team Event", "Open semi-finals · Top 20"] },
+    { day: "DAY 03", date: "Sun · 11 Oct 2026", rounds: ["Novice finals · Top 10", "Intermediate finals · Top 8", "Open Women & Men finals · Top 8", "Prize presentation"] },
   ],
 
   // Day-by-day running order for the full-schedule page. Times are start times;
@@ -50,8 +50,8 @@ const BA = {
         { time: "13:00", evt: "Novice Women · Qualifiers", cat: "NOV" },
         { time: "14:20", evt: "Intermediate Men · Qualifiers", cat: "INT" },
         { time: "15:00", evt: "Intermediate Women · Qualifiers", cat: "INT" },
-        { time: "15:40", evt: "Novice Men · Semi-Finals - Top 20", cat: "NOV" },
-        { time: "16:10", evt: "Novice Women · Semi-Finals - Top 20", cat: "NOV" },
+        { time: "15:40", evt: "Novice Men · Semi-Finals", cat: "NOV" },
+        { time: "16:10", evt: "Novice Women · Semi-Finals", cat: "NOV" },
       ],
     },
     {
@@ -59,20 +59,20 @@ const BA = {
       rows: [
         { time: "09:30", evt: "Open Men · Qualifiers", cat: "OPEN" },
         { time: "10:30", evt: "Open Women · Qualifiers", cat: "OPEN" },
-        { time: "11:00", evt: "Intermediate Men · Semi-Final - Top 20", cat: "INT" },
-        { time: "11:30", evt: "Intermediate Women · Semi-Final - Top 20", cat: "INT" },
-        { time: "12:00", evt: "Team Event · Knockout Rounds", cat: "TEAM" },
-        { time: "15:00", evt: "Open Women · Semi-Final - Top 20", cat: "OPEN" },
-        { time: "18:00", evt: "Open Men · Semi-Final - Top 20", cat: "OPEN" },
+        { time: "11:00", evt: "Intermediate Men · Semi-Final", cat: "INT" },
+        { time: "11:30", evt: "Intermediate Women · Semi-Final", cat: "INT" },
+        { time: "12:00", evt: "Team Event", cat: "TEAM" },
+        { time: "15:00", evt: "Open Women · Semi-Final", cat: "OPEN" },
+        { time: "18:00", evt: "Open Men · Semi-Final", cat: "OPEN" },
       ],
     },
     {
       day: "DAY 03", date: "Sun · 11 Oct 2026",
       rows: [
-        { time: "09:30", evt: "Novice Finals - Top 10", cat: "NOV" },
-        { time: "12:00", evt: "Intermediate Finals - Top 8", cat: "INT" },
-        { time: "15:00", evt: "Open Women · Final - Top 8", cat: "OPEN" },
-        { time: "18:00", evt: "Open Men · Final - Top 8", cat: "OPEN" },
+        { time: "09:30", evt: "Novice Finals", cat: "NOV" },
+        { time: "12:00", evt: "Intermediate Finals", cat: "INT" },
+        { time: "15:00", evt: "Open Women · Final", cat: "OPEN" },
+        { time: "18:00", evt: "Open Men · Final", cat: "OPEN" },
         { time: "19:30", evt: "Prize Presentation", cat: "" },
       ],
     },
@@ -80,26 +80,25 @@ const BA = {
 
   formats: [
     { code: "FLASH", time: "19 min / detail", rules: [
-      "Demo climb available", "6 problems per competitor", "Same detail enters together",
+      "Demo climb available", "Same detail enters together",
       "Routes can be viewed beforehand",
     ]},
     { code: "SESSION", time: "30 min / detail", rules: [
-      "No demo climb", "5 problems per competitor", "Same detail enters together",
-      "1 hour isolation",
+      "No demo climb", "Same detail enters together",
+      "Isolation required",
     ]},
     { code: "ROTATION", time: "4 min / route", rules: [
       "No demo climb", "3 problems (for Open) or 4 problems (for Novice and Intermediate) per competitor", "Sent out in gendered pairs",
       "Routes attempted in a set order", "Cannot view routes beforehand",
-      "1 hour isolation",
+      "Isolation required",
     ]},
     { code: "IFSC CONCURRENT", time: "Finals format", rules: [
-      "No demo climb", "4 problems per competitor", "Sent out in reverse order",
-      "2-min observation period", "1 hour isolation", "Return to isolation between problems",
+      "No demo climb", "Sent out in reverse order",
+      "2-min observation period", "Isolation required", "Return to isolation between problems",
     ]},
   ],
 
   faqs: [
-    { q: "Who can join?", a: "Anyone, but each category has its own rules - Novice is for first-time competitors, Intermediate for developing climbers, and Open welcomes all, including national team athletes. Pick the category you're eligible for; competing in one you're not means disqualification." },
     { q: "Where can I watch?", a: "Finals are streamed live on YouTube, and live scores run on ClimbBuddy throughout all three days." },
   ],
 

@@ -117,7 +117,7 @@
 .sched-day-card-top .display { white-space: nowrap; }
 .sched-date { color: var(--fg-dim); font-size: 12px; }
 .sched-focus { font-size: clamp(17px,1.7vw,21px); font-weight: 600; margin: 16px 0 18px; line-height: 1.2; text-wrap: balance; }
-.sched-rounds { list-style: none; display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 1.5px solid var(--line); margin-top: auto; }
+.sched-rounds { list-style: none; display: flex; flex-direction: column; gap: 10px; padding-top: 18px; margin-top: auto; }
 .sched-round { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--fg-dim); }
 .sched-round-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
