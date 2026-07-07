@@ -34,9 +34,9 @@ const BA = {
   ],
 
   schedule: [
-    { day: "DAY 01", date: "Fri · 9 Oct 2026", rounds: ["Novice quals - Men & Women", "Intermediate quals - Men & Women", "Novice semi-finals · Top 20"] },
-    { day: "DAY 02", date: "Sat · 10 Oct 2026", rounds: ["Open quals - Men & Women", "Intermediate semi-finals · Top 20", "Team Event", "Open semi-finals · Top 20"] },
-    { day: "DAY 03", date: "Sun · 11 Oct 2026", rounds: ["Novice finals · Top 10", "Intermediate finals · Top 8", "Open Women & Men finals · Top 8", "Prize presentation"] },
+    { day: "DAY 01", date: "Fri · 9 Oct 2026", rounds: ["Novice quals - Men & Women", "Intermediate quals - Men & Women", "Novice semi-finals"] },
+    { day: "DAY 02", date: "Sat · 10 Oct 2026", rounds: ["Open quals - Men & Women", "Intermediate semi-finals", "Team Event", "Open semi-finals"] },
+    { day: "DAY 03", date: "Sun · 11 Oct 2026", rounds: ["Novice finals", "Intermediate finals", "Open Women & Men finals", "Prize presentation"] },
   ],
 
   // Day-by-day running order for the full-schedule page. Times are start times;

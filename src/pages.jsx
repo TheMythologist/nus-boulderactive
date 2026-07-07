@@ -75,7 +75,7 @@ function ScheduleDetailPage({ go }) {
       <PageHero kicker="(02) Programme" title="Full schedule" sub={`Day-by-day running order - ${BA.event.dateLong}, ${BA.event.city}.`} />
       <section className="section pt0">
         <div className="wrap">
-          <p className="sched-note mono">Be at the Call Zone 5 minutes before your detail. Times are indicative and subject to change - final timings confirmed closer to the event.</p>
+          <p className="sched-note mono">Timings may be subject to change.</p>
 
           <div className="filter-row">
             {CAT_FILTERS.map((c) => (
