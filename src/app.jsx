@@ -7,7 +7,6 @@ const ROUTES = {
   schedule: { label: "Schedule" },
   rules: { label: "Rules" },
   location: { label: "Location" },
-  register: { label: "Register" },
 };
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -48,13 +47,14 @@ function Nav({ route, go }) {
         </a>
         <div className="nav-links desktop">
           {["home", "schedule", "rules", "location"].map(link)}
-          <a className="btn accent sm" href="#/register" style={{ marginLeft: 10 }}>Register <span className="arrow">→</span></a>
+          <a className="btn accent sm" href={BA.links.register} target="_blank" rel="noopener" style={{ marginLeft: 10 }}>Register <span className="arrow">→</span></a>
         </div>
         <button className="nav-toggle btn ghost sm" onClick={() => setOpen(!open)} aria-label="Menu">{open ? "Close" : "Menu"}</button>
       </div>
       {open && (
         <div className="nav-mobile">
-          {["home", "schedule", "rules", "location", "register"].map(link)}
+          {["home", "schedule", "rules", "location"].map(link)}
+          <a className="nav-link" href={BA.links.register} target="_blank" rel="noopener" onClick={() => setOpen(false)}>Register</a>
         </div>
       )}
     </nav>
@@ -69,14 +69,15 @@ function Footer({ go }) {
           <div className="footer-brand">
             <h2 className="display d-lg">BOULDER<br/>ACTIVE</h2>
             <p className="footer-blurb">{BA.event.blurb}</p>
-            <a className="btn accent" href="#/register">Register now <span className="arrow">→</span></a>
+            <a className="btn accent" href={BA.links.register} target="_blank" rel="noopener">Register now <span className="arrow">→</span></a>
           </div>
           <div className="footer-cols">
             <div className="footer-col">
               <span className="tag footer-h">Explore</span>
-              {["home", "schedule", "rules", "location", "register"].map((k) => (
+              {["home", "schedule", "rules", "location"].map((k) => (
                 <a key={k} href={"#/" + k} className="footer-link">{ROUTES[k].label}</a>
               ))}
+              <a className="footer-link" href={BA.links.register} target="_blank" rel="noopener">Register</a>
             </div>
             <div className="footer-col">
               <span className="tag footer-h">During the comp</span>
@@ -147,14 +148,13 @@ function App() {
   else if (route === "schedule-full") page = <ScheduleDetailPage go={go} />;
   else if (route === "rules") page = <RulesPage go={go} />;
   else if (route === "location") page = <LocationPage go={go} />;
-  else if (route === "register") page = <RegisterPage go={go} />;
   else page = <Home hero={t.hero} go={go} />;
 
   return (
     <>
       <Nav route={route} go={go} />
       {page}
-      {route !== "register" && <Footer go={go} />}
+      <Footer go={go} />
       <TweakUI t={t} setTweak={setTweak} />
     </>
   );
