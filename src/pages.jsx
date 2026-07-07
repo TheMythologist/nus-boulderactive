@@ -42,7 +42,6 @@ function SchedulePage({ go }) {
                   <span className="display d-md">{d.day}</span>
                 </div>
                 <span className="mono sched-date">{d.date}</span>
-                <p className="sched-focus">{d.focus}</p>
                 <ul className="sched-rounds">
                   {d.rounds.map((r, j) => <li key={j} className="sched-round"><span className="sched-round-dot" />{r}</li>)}
                 </ul>
@@ -150,7 +149,7 @@ function RulesPage({ go }) {
             <div className="rules-list">
               {[
                 ["Scoring", "Tops and zones are scored with attempts as the tiebreak, following IFSC-style ranking. Live standings update on ClimbBuddy throughout."],
-                ["Isolation", "Competitors enter isolation ahead of their round. Observation periods are strictly timed."],
+                ["Isolation", "Competitors enter isolation ahead of their round."],
                 ["Eligibility", <>Each category has its own requirements. Register in a category you're ineligible for and you'll be disqualified and moved up a tier. <a href={BA.links.rules} target="_blank" rel="noreferrer">Read the R&amp;R for more details on eligibility</a>.</>],
                 ["Conduct", "Respect the holds, the volunteers and your fellow climbers. Brushing between attempts is encouraged."],
               ].map(([t, d], i) => (
