@@ -40,7 +40,6 @@ function SchedulePage({ go }) {
                   className="sched-day-card card is-clickable">
                 <div className="sched-day-card-top">
                   <span className="display d-md">{d.day}</span>
-                  <Mk square>{d.wall}</Mk>
                 </div>
                 <span className="mono sched-date">{d.date}</span>
                 <p className="sched-focus">{d.focus}</p>
@@ -91,7 +90,6 @@ function ScheduleDetailPage({ go }) {
                   <div className="sched-day-head">
                     <span className="display d-md">{d.day}</span>
                     <span className="mono sched-date">{d.date}</span>
-                    <span className="mono sched-date">{d.wall}</span>
                   </div>
                   <div className="sched-day-body">
                     {rows.length
