@@ -76,6 +76,8 @@ function ScheduleDetailPage({ go }) {
       <PageHero kicker="(02) Programme" title="Full schedule" sub={`Day-by-day running order - ${BA.event.dateLong}, ${BA.event.city}.`} />
       <section className="section pt0">
         <div className="wrap">
+          <p className="sched-note mono">Be at the Call Zone 5 minutes before your detail. Times are indicative and subject to change - final timings confirmed closer to the event.</p>
+
           <div className="filter-row">
             {CAT_FILTERS.map((c) => (
               <button key={c.code} className={`chip ${filter === c.code ? "on" : ""}`} onClick={() => setFilter(c.code)}>{c.name}</button>
@@ -107,8 +109,6 @@ function ScheduleDetailPage({ go }) {
             })}
           </div>
 
-          <p className="note mono">Be at the Call Zone 5 minutes before your detail. Times are indicative and subject to change - final timings confirmed closer to the event.</p>
-
           <div className="rules-cta">
             <h3 className="display d-md">Back to the overview.</h3>
             <Bn onClick={() => go("schedule")}>Schedule overview</Bn>
@@ -126,6 +126,11 @@ function RulesPage({ go }) {
       <PageHero kicker="(04) Rules & Formats" title="Rules & formats" sub="Everything you need to know about how BoulderActive is climbed and scored." />
       <section className="section pt0">
         <div className="wrap">
+          <div className="rules-doc-cta">
+            <Bn variant="accent" href={BA.links.rules} target="_blank">Read the full Rules &amp; Regulations</Bn>
+            <span className="rules-doc-note">The complete BoulderActive 2026 R&amp;R, including category eligibility.</span>
+          </div>
+
           <div className="fmt-grid wide">
             {BA.formats.map((f, i) => (
               <Rv key={f.code} delay={i * 60} className="fmt-card card">
@@ -145,8 +150,8 @@ function RulesPage({ go }) {
             <div className="rules-list">
               {[
                 ["Scoring", "Tops and zones are scored with attempts as the tiebreak, following IFSC-style ranking. Live standings update on ClimbBuddy throughout."],
-                ["Isolation", "Finalists enter isolation ahead of their round. Observation periods are strictly timed."],
-                ["Eligibility", "Each category has its own requirements - Novice is for first-time competitors, Intermediate for developing climbers, and Open welcomes everyone, including national team climbers. Register in a category you're ineligible for and you'll be disqualified and moved up a tier."],
+                ["Isolation", "Competitors enter isolation ahead of their round. Observation periods are strictly timed."],
+                ["Eligibility", <>Each category has its own requirements. Register in a category you're ineligible for and you'll be disqualified and moved up a tier. <a href={BA.links.rules} target="_blank" rel="noreferrer">Read the R&amp;R for more details on eligibility</a>.</>],
                 ["Conduct", "Respect the holds, the volunteers and your fellow climbers. Brushing between attempts is encouraged."],
               ].map(([t, d], i) => (
                 <Rv key={t} delay={i * 60} className="rule-item">
