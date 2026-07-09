@@ -57,11 +57,12 @@ const BA = {
     {
       day: "DAY 02", date: "Sat · 10 Oct 2026",
       rows: [
+        { time: "09:00", evt: "Team Event · Qualifiers", cat: "OPEN" },
         { time: "09:30", evt: "Open Men · Qualifiers", cat: "OPEN" },
         { time: "10:30", evt: "Open Women · Qualifiers", cat: "OPEN" },
         { time: "11:00", evt: "Intermediate Men · Semi-Final", cat: "INT" },
         { time: "11:30", evt: "Intermediate Women · Semi-Final", cat: "INT" },
-        { time: "12:00", evt: "Team Event", cat: "TEAM" },
+        { time: "12:00", evt: "Team Event · Knockout", cat: "TEAM" },
         { time: "15:00", evt: "Open Women · Semi-Final", cat: "OPEN" },
         { time: "18:00", evt: "Open Men · Semi-Final", cat: "OPEN" },
       ],
